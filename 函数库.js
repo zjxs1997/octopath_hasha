@@ -4,6 +4,24 @@ if (!requestScreenCapture(true)) {
     exit();
 }
 
+// 检查进入战斗后是否出现猫
+var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
+function checkCat() {
+    var img = null;
+    while(!img) {
+        log("尝试截图");
+        img = captureScreen();
+    }
+    var key = findImage(img, cat, {
+        region: [738, 442, 100, 100]
+    })
+    toastLog(key)
+    if (key)
+        return 1;
+    else
+        return 0;
+}
+
 // 人物停住的时候，返回1，原理是检查菜单左下角
 var halt = images.read("/storage/emulated/0/checkPic/haltpic.jpg")
 function checkStanding() {
@@ -123,6 +141,30 @@ function challenge_npc() {
     // 瞎鸡儿点，一般这个时候是对话
     click(1463, 751)
     sleep(5700)
+}
+// 从聞き出す开始雇佣npc
+function hire_npc() {
+    // 右下角聞き出す
+    click(2104, 901)
+    sleep(3400)
+    // 雇う（やとう）
+    click(1765, 561)
+    sleep(1600)
+    // 不砍价了
+    click(1668, 593)
+    sleep(1600)
+    // 确认价格
+    click(1437, 730)
+    sleep(3400)
+    // 瞎鸡儿点，一般这个时候是对话
+    click(1463, 751)
+    sleep(1300)
+    // 已加入，确认
+    click(1253, 708)
+    sleep(1000)
+    // 右上角叉叉
+    click(2082, 69)
+    sleep(1000)
 }
 
 // 从地图开始取消支援
