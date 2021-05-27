@@ -171,7 +171,8 @@ function hire_npc() {
     sleep(1300)
     // 已加入，确认
     click(1253, 708)
-    sleep(1000)
+    // 新版本
+    sleep(3000)
     // 右上角叉叉
     click(2082, 69)
     sleep(1000)

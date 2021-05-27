@@ -15,6 +15,7 @@ if (!requestScreenCapture(true)) {
 }
 
 var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
+var littleCat = images.read("/storage/emulated/0/checkPic/mylitcat.jpg")
 var escape = images.read("/storage/emulated/0/checkPic/startpic1.jpg")
 var halt = images.read("/storage/emulated/0/checkPic/haltpic.jpg")
 var coin = images.read("/storage/emulated/0/checkPic/coin.jpeg");
@@ -33,9 +34,15 @@ function checkCat() {
     if (key){
         device.vibrate(1000)
         return 1;
+    }     
+    var key2 = findImage(img, littleCat, {
+        // region: []
+    })
+    if (key2) {
+        device.vibrate(1000)
+        return 2;
     }
-    else
-        return 0;
+    return 0;
 }
 // 人物停住的时候，返回1，原理是检查菜单左下角
 function checkStanding() {
@@ -160,7 +167,7 @@ function hire_npc() {
     sleep(1300)
     // 已加入，确认
     click(1253, 708)
-    sleep(1000)
+    sleep(3000)
     // 右上角叉叉
     click(2082, 69)
     sleep(1000)
@@ -254,6 +261,29 @@ function all_switch() {
 }
 
 // 待调试
+function fightLittleCat() {
+    while (1) {
+        all_switch()
+        all_boost()
+        // attack
+        click(2020, 929)
+        sleep(10000)
+        if (checkCombat())
+            continue;
+        if (checkCombatEnd()) {
+            // 瞎鸡儿点
+            click(1463, 751)
+            sleep(2100)
+            // 瞎鸡儿点
+            click(1463, 751)
+            sleep(3100)
+            // 瞎鸡儿点
+            click(1463, 751)
+            sleep(5600)
+        }
+    }
+}
+
 function fightCat() {
     // turn 1
     move(1, 4, false)
@@ -261,8 +291,8 @@ function fightCat() {
     move(3, 4, false)
     move(4, 4, false)
     // 调试
-    toastLog('请您检阅！')
-    sleep(10000)
+    // toastLog('请您检阅！')
+    // sleep(10000)
     // attack
     click(2020, 929)
     sleep(1000)
@@ -275,8 +305,8 @@ function fightCat() {
     move(1, 2, false)
     all_boost()
     // 调试
-    toastLog('请您检阅！')
-    sleep(10000)
+    // toastLog('请您检阅！')
+    // sleep(10000)
     // attack
     click(2020, 929)
     sleep(1000)
@@ -288,12 +318,12 @@ function fightCat() {
     all_switch()
     all_boost()
     // 调试
-    toastLog('请您检阅！')
-    sleep(10000)
+    // toastLog('请您检阅！')
+    // sleep(10000)
     // attack
     click(2020, 929)
     sleep(1000)
-    while (!checkEnd()) {
+    while (!checkCombatEnd()) {
         sleep(1000)
     }
 
@@ -332,6 +362,9 @@ var catBattle = 0;
 while (1) {
     if (kill_cat_times > 2) {
         // 重置各种状态
+        click_little_map()
+        click(2085, 59)
+        sleep(1000)
         hole2town();
         heal_and_hire_worker();
         town2hole();
@@ -351,11 +384,17 @@ while (1) {
             toastLog("进入战斗")
             totalBattle++;
             sleep(2000);
-            if (checkCat()) {
+            var res_val = checkCat()
+            if (res_val) {
                 toast("是猫，好耶")
                 catBattle++;
-                kill_cat_times++;
-                fightCat();
+                if (res_val == 1) {
+                    fightCat();
+                    kill_cat_times++;
+                }
+                else {
+                    fightLittleCat();
+                }
                 log('遇到'+totalBattle+'次战斗，其中' + catBattle +'次猫猫');
                 if (kill_cat_times > 2) {
                     break;
