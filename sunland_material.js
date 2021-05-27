@@ -184,17 +184,6 @@ function town2hole() {
     // fast travel的确认
     click(1432, 695)
     sleep(8500)
-
-    click_world_map()
-    click(1531, 610)
-    sleep(1400)
-    // 到这里去
-    click(1870, 905)
-    sleep(1300)
-    // fast travel的确认
-    click(1432, 695)
-    sleep(8500)
-
 }
 
 function playerMove(f) {
@@ -222,7 +211,9 @@ while (1) {
         town2hole();
         battle_times = 0;
         flag = true;
+        toastLog('xxx')
     }
+
     if (checkStanding()) {
         playerMove(flag);
         flag = !flag;
