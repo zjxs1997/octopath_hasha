@@ -15,7 +15,6 @@ function checkCat() {
     var key = findImage(img, cat, {
         region: [738, 442, 100, 100]
     })
-    toastLog(key)
     if (key)
         return 1;
     else
@@ -110,6 +109,17 @@ function move(person, skill, do_switch) {
             break;
     }
     sleep(1000)
+}
+
+// 召唤支援者
+function use_first_support() {
+    click(1352, 922)
+    sleep(800)
+    click(1372, 424)
+    sleep(800)
+    // 呼び出す
+    click(1493, 866)
+    sleep(800)
 }
 
 // all boost

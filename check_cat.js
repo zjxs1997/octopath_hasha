@@ -13,9 +13,8 @@ function checkCat() {
         img = captureScreen();
     }
     var key = findImage(img, cat, {
-        region: [738, 442, 100, 100]
+        region: [668, 392, 500, 500]
     })
-    toastLog(key)
     if (key)
         return 1;
     else

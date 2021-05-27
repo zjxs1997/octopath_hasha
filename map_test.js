@@ -85,8 +85,29 @@ function hire_npc() {
     click(2082, 69)
     sleep(1000)
 }
-// 在シェパードロック招募身軽な大工 （みがるなだいく）
-function hire_worker() {
+// 在シェパードロック旅店回复，并且招募身軽な大工 （みがるなだいく）
+function heal_and_hire_worker() {
+    // 进入旅店
+    click(1241, 354)
+    sleep(3600)
+    // 旅店柜台
+    click(1234, 441)
+    sleep(3500)    
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1100)
+    // 确认宿屋，20块钱
+    click(1491, 716)
+    sleep(6000)
+    // 恢复后的确认
+    click(1236, 699)
+    sleep(1600)
+    click_little_map()
+    // 出门
+    click(1104, 668)
+    sleep(6000)
+
+    // 雇佣
     click_little_map()
     click(1544, 595)
     sleep(10000)
@@ -95,5 +116,4 @@ function hire_worker() {
     hire_npc()
 }
 
-hire_worker()
 
