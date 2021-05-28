@@ -6,6 +6,7 @@ if (!requestScreenCapture(true)) {
 
 // 检查进入战斗后是否出现猫
 var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
+var littleCat = images.read("/storage/emulated/0/checkPic/mylitcat.jpg")
 function checkCat() {
     var img = null;
     while(!img) {
@@ -13,14 +14,21 @@ function checkCat() {
         img = captureScreen();
     }
     var key = findImage(img, cat, {
-        region: [738, 442, 100, 100]
+        region: [668, 392, 500, 500]
     })
-    if (key)
+    if (key){
+        device.vibrate(1000)
         return 1;
-    else
-        return 0;
+    }     
+    var key2 = findImage(img, littleCat, {
+        // region: []
+    })
+    if (key2) {
+        device.vibrate(1000)
+        return 2;
+    }
+    return 0;
 }
-
 // 人物停住的时候，返回1，原理是检查菜单左下角
 var halt = images.read("/storage/emulated/0/checkPic/haltpic.jpg")
 function checkStanding() {
