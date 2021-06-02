@@ -1,8 +1,16 @@
-//截屏权限请求
-if (!requestScreenCapture(true)) {
-    toast("请求截图失败");
-    exit();
-}
+// 这里收录的都是应该所有情况通用的函数，没有假定任何可能不一样的坐标。
+// 使用的话require试试看，不知道可不可以（还没有测试过）
+
+
+// //截屏权限请求
+// if (!requestScreenCapture(true)) {
+//     toast("请求截图失败");
+//     exit();
+// }
+
+// ----------------------------
+// 检查类函数
+// ----------------------------
 
 // 检查进入战斗后是否出现猫
 var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
@@ -233,6 +241,15 @@ function click_little_map() {
     sleep(1600)
 }
 
+function click_world_map() {
+    // 大陆地图菜单
+    click(1151, 896)
+    sleep(1800)
+}
+function click_map_shrink() {
+    click(2046, 935)
+    sleep(1000)
+}
 // 点右下角attack并sleep
 function start_attack(time) {
     click(2020, 929)

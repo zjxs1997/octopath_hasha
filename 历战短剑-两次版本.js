@@ -8,47 +8,8 @@
 
 auto()
 
+var common = require("lib.js")
 
-// 点选技能
-function move(person, skill, do_switch) {
-    switch(person) {
-        case 1:
-            click(2041, 126)
-            sleep(1300)
-            break;
-        case 2:
-            click(2041, 311)
-            sleep(1300)
-            break;
-        case 3:
-            click(2041, 531)
-            sleep(1300)
-            break;
-        case 4:
-            click(2041, 721)
-            sleep(1300)
-            break;
-    }
-    if (do_switch) {
-        click(1545, 873)
-        sleep(1300)    
-    }
-
-    switch(skill) {
-        case 2:
-            click(1537, 409)
-            sleep(1300)
-            break;
-        case 3:
-            click(1533, 575)
-            sleep(1300)
-            break;
-        case 4:
-            click(1502, 760)
-            sleep(1300)
-            break;
-    }
-}
 
 while(true) {
     // 右上角小地图位置
@@ -83,26 +44,26 @@ while(true) {
     click(1463, 751)
     sleep(5700)
 
-    move(1, 4, false)
-    move(2, 4, true)
-    move(3, 4, false)
-    move(4, 3, true)
+    common.move(1, 4, false)
+    common.move(2, 4, true)
+    common.move(3, 4, false)
+    common.move(4, 3, true)
     // attack
     click(2020, 929)
     sleep(13000)
 
 
-    move(1, 4, false)
-    move(2, 2, true)
-    move(3, 4, false)
-    move(4, 3, true)
+    common.move(1, 4, false)
+    common.move(2, 2, true)
+    common.move(3, 4, false)
+    common.move(4, 3, true)
     // attack
     click(2020, 929)
     sleep(12000)
 
-    move(1, 2, false)
-    move(2, 4, true)
-    move(3, 3, false)
+    common.move(1, 2, false)
+    common.move(2, 4, true)
+    common.move(3, 3, false)
     // all boost
     click(1678, 908)
     sleep(1300)
