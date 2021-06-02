@@ -34,6 +34,7 @@ functions.checkCat = function() {
     var key2 = findImage(img, littleCat, {
         // region: []
     })
+    img.recycle();
     if (key2) {
         device.vibrate(1000)
         return 2;
@@ -53,6 +54,7 @@ functions.checkStanding = function() {
     var key = findImage(img, halt, {
         region: [haltX, haltY, 50, 50]
     })
+    img.recycle();
     if (key)
         return 1;
     else
@@ -71,6 +73,7 @@ functions.checkCombat = function() {
     var key = findImage(img, escape, {
         region: [1170, 900, 50, 50]
     })
+    img.recycle();
     if (key)
         return 1;
     else
@@ -87,6 +90,7 @@ functions.checkCombatEnd = function () {
     var key = findImage(img, coin, {
         region: [1680, 240, 50, 50]
     })
+    img.recycle();
     if (key)
         return 1;
     else
@@ -138,7 +142,7 @@ functions.move = function (person, skill, do_switch) {
 }
 
 // 召唤支援者
-function use_first_support() {
+functions.use_first_support = function () {
     click(1352, 922)
     sleep(800)
     click(1372, 424)
@@ -185,10 +189,10 @@ functions.hire_npc = function () {
     sleep(3400)
     // 雇う（やとう）
     click(1765, 561)
-    sleep(1600)
-    // 不砍价了
-    click(1668, 593)
-    sleep(1600)
+    sleep(2000)
+    // 还是砍一下吧～
+    click(1209, 724)
+    sleep(2000)
     // 确认价格
     click(1437, 730)
     sleep(3400)
@@ -201,7 +205,7 @@ functions.hire_npc = function () {
     sleep(3000)
     // 右上角叉叉
     click(2082, 69)
-    sleep(1000)
+    sleep(1500)
 }
 
 // 从地图开始取消支援

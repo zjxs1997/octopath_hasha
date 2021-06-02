@@ -42,7 +42,7 @@ function town2hole() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(8500)
+    sleep(9000)
 
     common.click_world_map()
     click(1531, 610)
@@ -52,7 +52,7 @@ function town2hole() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(8500)
+    sleep(9000)
 }
 
 
@@ -90,24 +90,25 @@ function heal_and_hire_worker() {
 // 待调试
 function fightLittleCat() {
     while (1) {
-        common.all_switch()
-        common.all_boost()
-        // attack
-        click(2020, 929)
-        sleep(10000)
-        if (common.checkCombat())
-            continue;
+        if (common.checkCombat()) {
+            common.all_switch()
+            common.all_boost()
+            // attack
+            click(2020, 929)
+        }
         if (common.checkCombatEnd()) {
             // 瞎鸡儿点
             click(1463, 751)
-            sleep(2100)
+            sleep(1500)
             // 瞎鸡儿点
             click(1463, 751)
-            sleep(3100)
+            sleep(1500)
             // 瞎鸡儿点
             click(1463, 751)
             sleep(5600)
+            return;
         }
+        sleep(1000);
     }
 }
 
@@ -156,10 +157,10 @@ function fightCat() {
 
     // 瞎鸡儿点
     click(1463, 751)
-    sleep(2100)
+    sleep(1500)
     // 瞎鸡儿点
     click(1463, 751)
-    sleep(3100)
+    sleep(1500)
     // 瞎鸡儿点
     click(1463, 751)
     sleep(5600)
@@ -184,6 +185,7 @@ var flag = true;
 var i = 0;
 var totalBattle = 0;
 var catBattle = 0;
+var littleCatBattle = 0;
 
 
 while (1) {
@@ -214,15 +216,16 @@ while (1) {
             var res_val = common.checkCat()
             if (res_val) {
                 toast("是猫，好耶")
-                catBattle++;
                 if (res_val == 1) {
+                    catBattle++;
                     fightCat();
                     kill_cat_times++;
                 }
                 else {
+                    littleCatBattle++;
                     fightLittleCat();
                 }
-                log('遇到'+totalBattle+'次战斗，其中' + catBattle +'次猫猫');
+                log('遇到'+totalBattle+'次战斗，其中' + catBattle +'次猫猫，' +  littleCatBattle + '次小猫猫');
                 if (kill_cat_times > 2) {
                     break;
                 }
