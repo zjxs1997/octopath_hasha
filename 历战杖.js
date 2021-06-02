@@ -1,9 +1,9 @@
 // 历战杖脚本
 // 需要开局在river land城镇旅店门口
 // 配置：
-// 1号位女贼，技能2 anti guard；后排吟游诗人火舞，技能1达人
+// 1号位女贼，技能2 anti guard；后排吟游诗人火舞，技能1达人，3搅乱（算了还是不用了，浪费时间的）
 // 3号位ddl，技能2剑岚武斗
-// 5号位稻草人，技能2四连风；后排默尔索，技能2风魔法
+// 6号位稻草人，技能2四连风；前排默尔索，技能2风魔法
 // 7号位管家，技能3三连，技能2风杀
 // 后排挂个降风耐的，和一个降属防的
 
@@ -11,32 +11,48 @@ auto()
 
 var common = require("lib.js");
 
+//截屏权限请求
+if (!requestScreenCapture(true)) {
+    toast("请求截图失败");
+    exit();
+}
+
+var counter = 0;
+
 while (true) {
 
     common.click_little_map()
     click(1391, 453)
-    sleep(7000)
+    sleep(1000)
+    while (!common.checkStanding())
+        sleep(1000);
 
     for (var i = 0; i < 2; ++i) {
         // 点npc
         click(1325, 590)
         sleep(2600)
         common.challenge_npc()
+
+        // 我确保我的队伍可以三回合稳定击杀，所以没有采用更复杂的循环逻辑
     
         // turn 1
         common.move(1, 2, true)
-        common.move(3, 3, false)
+        common.move(3, 3, true)
         common.all_boost()
         common.move(2, 3, false)
         common.move(4, 4, false)
-        common.start_attack(14640)
+        common.start_attack(1000)
+        while (!common.checkCombat())
+            sleep(1000);
 
         // turn 2
         common.move(1, 3, true)
         common.move(2, 3, false)
         common.move(3, 3, true)
         common.move(4, 4, false)
-        common.start_attack(13750)
+        common.start_attack(1000)
+        while (!common.checkCombat())
+            sleep(1000);
 
         // turn 3
         common.move(1, 2, true)
@@ -44,7 +60,9 @@ while (true) {
         common.move(3, 3, false)
         common.move(4, 3, false)
         common.all_boost()
-        common.start_attack(14100)
+        common.start_attack(1000)
+        while (!common.checkCombatEnd())
+            sleep(1000);
 
         // 战斗结束
         // 瞎鸡儿点
@@ -85,5 +103,6 @@ while (true) {
     click(1030, 680)
     sleep(6000)
 
-
+    counter++;
+    log("大循环了"+counter+"次！")
 }

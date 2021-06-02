@@ -8,14 +8,17 @@
 //     exit();
 // }
 
-// ----------------------------
-// 检查类函数
-// ----------------------------
+
+var functions = {};
+
+// --------------------------------------------------------
+// 检查类函数，用到这些的话，需要请求截图权限
+// --------------------------------------------------------
 
 // 检查进入战斗后是否出现猫
 var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
 var littleCat = images.read("/storage/emulated/0/checkPic/mylitcat.jpg")
-function checkCat() {
+functions.checkCat = function() {
     var img = null;
     while(!img) {
         log("尝试截图");
@@ -39,7 +42,7 @@ function checkCat() {
 }
 // 人物停住的时候，返回1，原理是检查菜单左下角
 var halt = images.read("/storage/emulated/0/checkPic/haltpic.jpg")
-function checkStanding() {
+functions.checkStanding = function() {
     var haltX = 400;
     var haltY = 900;
     var img = null;
@@ -57,7 +60,7 @@ function checkStanding() {
 }
 // 判断是否进入战斗，进入返回1，原理是检查战斗中的逃走选项是否存在
 var escape = images.read("/storage/emulated/0/checkPic/startpic1.jpg")
-function checkCombat() {
+functions.checkCombat = function() {
     var escapeX = 1170;
     var esacapeY = 900;
     //截图判断
@@ -75,7 +78,7 @@ function checkCombat() {
 }
 // 检查战斗是否结束，结束返回1，原理是检查结算界面的硬币icon（部分）
 var coin = images.read("/storage/emulated/0/checkPic/coin.jpeg");
-function checkCombatEnd() {
+functions.checkCombatEnd = function () {
     //截图判断
     var img = null;
     while(!img) {
@@ -90,8 +93,15 @@ function checkCombatEnd() {
         return 0;
 }
 
+
+
+
+// --------------------------------------------------------
+// 操作类函数
+// --------------------------------------------------------
+
 // 点选技能
-function move(person, skill, do_switch) {
+functions.move = function (person, skill, do_switch) {
     switch(person) {
         case 1:
             click(2041, 126)
@@ -139,19 +149,19 @@ function use_first_support() {
 }
 
 // all boost
-function all_boost() {
+functions.all_boost = function() {
     click(1678, 908)
     sleep(1300)
 }
 
 // all switch
-function all_switch() {
+functions.all_switch = function () {
     click(1526, 944)
     sleep(1000)
 }
 
 // 从聞き出す开始整个挑战的过程
-function challenge_npc() {
+functions.challenge_npc = function () {
     // 右下角挑战按钮，kikidasu
     click(2104, 901)
     sleep(3400)
@@ -169,7 +179,7 @@ function challenge_npc() {
     sleep(5700)
 }
 // 从聞き出す开始雇佣npc
-function hire_npc() {
+functions.hire_npc = function () {
     // 右下角聞き出す
     click(2104, 901)
     sleep(3400)
@@ -195,7 +205,7 @@ function hire_npc() {
 }
 
 // 从地图开始取消支援
-function cancel_support() {
+functions.cancel_support = function () {
     // party菜单
     click(636, 861)
     sleep(2000)
@@ -220,7 +230,7 @@ function cancel_support() {
 }
 
 // 从地图开始，回到当前城镇的旅店门口
-function return_to_hotel_door() {
+functions.return_to_hotel_door = function () {
     // 大陆地图菜单
     click(1151, 896)
     sleep(1800)
@@ -236,28 +246,28 @@ function return_to_hotel_door() {
 }
 
 // 点右上角小地图
-function click_little_map() {
+functions.click_little_map = function () {
     click(2063, 165)
     sleep(1600)
 }
 
-function click_world_map() {
+functions.click_world_map = function () {
     // 大陆地图菜单
     click(1151, 896)
     sleep(1800)
 }
-function click_map_shrink() {
+functions.click_map_shrink = function () {
     click(2046, 935)
     sleep(1000)
 }
 // 点右下角attack并sleep
-function start_attack(time) {
+functions.start_attack = function (time) {
     click(2020, 929)
     sleep(time)
 }
 
 // 战斗结束后的确认
-function battle_epilouge() {
+functions.battle_epilouge = function () {
     // 确认加入后的ok
     click(1236, 699)
     sleep(1600)
@@ -267,7 +277,7 @@ function battle_epilouge() {
 }
 
 // 从确认睡觉到出旅店门前
-function confirm_rest() {
+functions.confirm_rest = function () {
     // 瞎鸡儿点
     click(1463, 751)
     sleep(1100)
@@ -283,5 +293,5 @@ function confirm_rest() {
     // 未出门
 }
 
-
+module.exports = functions;
 
