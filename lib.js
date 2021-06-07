@@ -128,6 +128,9 @@ functions.move = function (person, skill, do_switch) {
     }
 
     switch(skill) {
+        case 1:
+            click(1609, 284)
+            break;
         case 2:
             click(1537, 409)
             break;
@@ -274,7 +277,8 @@ functions.start_attack = function (time) {
 functions.battle_epilouge = function () {
     // 确认加入后的ok
     click(1236, 699)
-    sleep(1600)
+    // 新版，感觉是这里要改？
+    sleep(4600)
     // 右上角叉叉
     click(2104, 28)
     sleep(2600)
