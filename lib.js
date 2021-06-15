@@ -137,6 +137,24 @@ functions.checkCloseWin = function () {
         return 0;
 }
 
+//判断是否在jjc中展开战斗
+var arena_escape = images.read("/storage/emulated/0/checkPic/arena_escape.jpg")
+functions.checkArenaCombat = function() {
+    //截图判断
+    var img = null;
+    while(!img) {
+        img = captureScreen();
+    }
+    var key = findImage(img, arena_escape, {
+        region: [1170, 900, 50, 50]
+    })
+    img.recycle();
+    if (key)
+        return 1;
+    else
+        return 0;
+}
+
 
 // 检测后排是否有人倒下
 var death2 = images.read("/storage/emulated/0/checkPic/death2.png");
@@ -150,7 +168,7 @@ functions.checkBackDeath = function () {
         threshold: 0.8
     }).matches;
     img.recycle()
-    if (result)
+    if (result.length > 0)
         return 1;
     else
         return 0;
