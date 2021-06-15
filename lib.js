@@ -11,6 +11,11 @@
 
 var functions = {};
 
+
+
+
+
+
 // --------------------------------------------------------
 // 检查类函数，用到这些的话，需要请求截图权限
 // --------------------------------------------------------
@@ -96,6 +101,44 @@ functions.checkCombatEnd = function () {
     else
         return 0;
 }
+
+
+// 检测是否有胜利的勋章的那个icon（有点像棱形）
+var medal = images.read("/storage/emulated/0/checkPic/medal.jpg");
+functions.checkMedal = function () {
+    var img = null;
+    while(!img) {
+        img = captureScreen();
+    }
+    var result = findImage(img, medal, {
+        region: [970, 450, 50, 50]
+    });
+    img.recycle();
+    if (result)
+        return 1;
+    else
+        return 0;
+}
+
+// 检测中间是否有个閉じる
+var closewin = images.read("/storage/emulated/0/checkPic/closewin.jpg");
+functions.checkCloseWin = function () {
+    var img = null;
+    while(!img) {
+        img = captureScreen();
+    }
+    var result = findImage(img, closewin, {
+        region: [1185, 555, 50, 50]
+    });
+    img.recycle();
+    if (result)
+        return 1;
+    else
+        return 0;
+}
+
+
+
 
 
 
