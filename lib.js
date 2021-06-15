@@ -138,6 +138,24 @@ functions.checkCloseWin = function () {
 }
 
 
+// 检测后排是否有人倒下
+var death2 = images.read("/storage/emulated/0/checkPic/death2.png");
+functions.checkBackDeath = function () {
+    var img = null;
+    while(!img) {
+        img = captureScreen();
+    }
+    var result = images.matchTemplate(img, death2, {
+        region: [960, 0],
+        threshold: 0.8
+    }).matches;
+    img.recycle()
+    if (result)
+        return 1;
+    else
+        return 0;
+}
+
 
 
 
