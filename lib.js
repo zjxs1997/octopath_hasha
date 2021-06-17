@@ -26,14 +26,12 @@ var littleCat = images.read("/storage/emulated/0/checkPic/mylitcat.jpg")
 functions.checkCat = function() {
     var img = null;
     while(!img) {
-        log("尝试截图");
         img = captureScreen();
     }
     var key = findImage(img, cat, {
         region: [668, 392, 500, 500]
     })
     if (key){
-        device.vibrate(1000)
         return 1;
     }     
     var key2 = findImage(img, littleCat, {
@@ -41,7 +39,6 @@ functions.checkCat = function() {
     })
     img.recycle();
     if (key2) {
-        device.vibrate(1000)
         return 2;
     }
     return 0;
@@ -53,7 +50,6 @@ functions.checkStanding = function() {
     var haltY = 900;
     var img = null;
     while(!img) {
-        log("尝试截图");
         img = captureScreen();
     }
     var key = findImage(img, halt, {
