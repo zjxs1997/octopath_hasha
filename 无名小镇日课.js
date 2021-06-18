@@ -402,51 +402,53 @@ function fight() {
     }
 }
 
-// 进篝火
-move_upward()
-while (!common.checkStanding()) sleep(1000);
-click(1224, 182)
-sleep(1000)
-click(1540, 526)
-while (!common.checkStanding()) sleep(1000);
 
-// 去森林
-click(839, 221)
-sleep(5000)
-click(1513, 600)
-while (!common.checkStanding()) sleep(1000);
+function do_tower() {
+    // 进篝火
+    move_upward()
+    while (!common.checkStanding()) sleep(1000);
+    click(1224, 182)
+    sleep(1000)
+    click(1540, 526)
+    while (!common.checkStanding()) sleep(1000);
 
-// 开始循环
-for (var word_index = 0; word_index < all_coordinates.length; ++word_index) {
-    coordinates = all_coordinates[word_index];
-    for (var cor_index = 0; cor_index < coordinates.length; ++cor_index) {
-        var x = coordinates[cor_index][0];
-        var y = coordinates[cor_index][1];
-        common.click_little_map();
-        click(x, y);
-        while (!common.checkStanding()) sleep(1000);
-        if (cor_index == coordinates.length-1) {
-            click(1450, 419)
-            sleep(800)
-            click(1544, 610)
+    // 去森林
+    click(839, 221)
+    sleep(5000)
+    click(1513, 600)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 开始循环
+    for (var word_index = 0; word_index < all_coordinates.length; ++word_index) {
+        coordinates = all_coordinates[word_index];
+        for (var cor_index = 0; cor_index < coordinates.length; ++cor_index) {
+            var x = coordinates[cor_index][0];
+            var y = coordinates[cor_index][1];
+            common.click_little_map();
+            click(x, y);
             while (!common.checkStanding()) sleep(1000);
-            break;
+            if (cor_index == coordinates.length-1) {
+                click(1450, 419)
+                sleep(800)
+                click(1544, 610)
+                while (!common.checkStanding()) sleep(1000);
+                break;
+            }
+            move_upward();
+            while (!common.checkCombat()) sleep(1000);
+            fight();
         }
-        move_upward();
-        while (!common.checkCombat()) sleep(1000);
-        fight();
     }
 }
 
 
 // 追忆塔平a还得测试
+// do_tower();
+
+
 
 // ------------------------------------------------
 // ------------------------------------------------
-
-
-
-
 
 
 
