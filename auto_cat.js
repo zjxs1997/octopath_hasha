@@ -170,7 +170,7 @@ function fightCat() {
 function playerMove(f) {
     common.click_little_map();
     if (f) {
-        click(1250, 792)
+        click(1355, 385)
     } else {
         click(1206, 353)
     }
