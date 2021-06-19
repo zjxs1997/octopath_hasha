@@ -19,7 +19,7 @@ var common = require("lib.js");
 
 forest_coordinates = [
     [1058, 627],        // 天马
-    [1320, 613],        // 不知道是啥
+    [1320, 613],        // deer
     [769, 453],         // 蘑菇
     [918, 453],         // 盾斗士
     [1173, 308],        // boss
@@ -443,7 +443,7 @@ function do_tower() {
 
 
 // 追忆塔平a还得测试
-// do_tower();
+do_tower();
 
 
 
