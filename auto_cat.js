@@ -197,7 +197,8 @@ while (1) {
         // 重置各种状态
         common.click_little_map()
         click(2085, 59)
-        sleep(1000)
+        // 这里尽量还是sleep长一点，菜单展开来还是要点时间的
+        sleep(2000)
         hole2town();
         heal_and_hire_worker();
         town2hole();
