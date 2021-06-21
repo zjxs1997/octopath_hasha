@@ -84,6 +84,21 @@ all_coordinates = [
 
 
 
+function end_combat() {
+    // 战斗结束
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(5600)
+}
+
+
+
 // ------------------------------------------------
 // ------------------------------------------------
 
@@ -114,15 +129,7 @@ function challenge() {
     while (!common.checkCombatEnd())
         sleep(1000);
     // 战斗结束
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(1500)
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(1500)
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(5600)
+    end_combat();
     // 瞎鸡儿点
     click(1463, 751)
     sleep(2000)
@@ -268,16 +275,7 @@ common.all_boost();
 common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
-// 战斗结束
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(5600)
+end_combat();
 // 瞎鸡儿点
 click(1463, 751)
 sleep(2000)
@@ -292,16 +290,7 @@ common.all_boost();
 common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
-// 战斗结束
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(5600)
+end_combat();
 // 瞎鸡儿点
 click(1463, 751)
 sleep(2000)
@@ -316,16 +305,7 @@ common.all_boost();
 common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
-// 战斗结束
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(5600)
+end_combat();
 // 瞎鸡儿点
 click(1463, 751)
 sleep(2000)
@@ -340,16 +320,7 @@ common.all_boost();
 common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
-// 战斗结束
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(1500)
-// 瞎鸡儿点
-click(1463, 751)
-sleep(5600)
+end_combat();
 // 瞎鸡儿点
 click(1463, 751)
 sleep(2000)
@@ -387,15 +358,7 @@ function fight() {
             click(2020, 929)
         }
         if (common.checkCombatEnd()) {
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(1500)
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(1500)
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(5600)
+            end_combat();
             return;
         }
         sleep(1000);
@@ -444,6 +407,13 @@ function do_tower() {
 
 // 追忆塔平a还得测试
 do_tower();
+
+
+
+// common.return_to_hotel_door();
+// 如果要插入篝火2的脚本，在下面：
+
+
 
 
 
