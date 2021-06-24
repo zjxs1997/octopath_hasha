@@ -27,7 +27,7 @@ function hole2town() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(8500)
+    while (!common.checkStanding()) sleep(1000);
 }
 
 // シェパードロック先去ドニエスク
@@ -42,7 +42,7 @@ function town2hole() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(9000)
+    while (!common.checkStanding()) sleep(1000);
 
     common.click_world_map()
     click(1531, 610)
@@ -52,7 +52,7 @@ function town2hole() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(9000)
+    while (!common.checkStanding()) sleep(1000);
 }
 
 
