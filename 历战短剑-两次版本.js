@@ -5,10 +5,17 @@
 // 3号位火舞，技能1号位达人，装备带吟游诗人；后排男剑；3号位二连
 // 5号位泰雷兹，技能2号位二连雷；3号位三连雷
 // 7号位密罗德，技能2号位回血；后排女贼，技能2号位anti guard
+// 重要：测试不多，可能不太稳
 
 auto()
 
 var common = require("lib.js")
+
+//截屏权限请求
+if (!requestScreenCapture(true)) {
+    toast("请求截图失败");
+    exit();
+}
 
 
 while(true) {
@@ -16,7 +23,9 @@ while(true) {
     click(2063, 165)
     sleep(1600)
     click(1548, 900)
-    sleep(26500)
+    sleep(1000)
+    while (!common.checkStanding())
+        sleep(1000);
     click(2063, 165)
     sleep(1600)
     click(1319, 788)
@@ -48,18 +57,17 @@ while(true) {
     common.move(2, 4, true)
     common.move(3, 4, false)
     common.move(4, 3, true)
-    // attack
-    click(2020, 929)
-    sleep(13000)
-
+    common.start_attack(1000)
+    while (!common.checkCombat())
+        sleep(1000);
 
     common.move(1, 4, false)
     common.move(2, 2, true)
     common.move(3, 4, false)
     common.move(4, 3, true)
-    // attack
-    click(2020, 929)
-    sleep(12000)
+    common.start_attack(1000)
+    while (!common.checkCombat())
+        sleep(1000);
 
     common.move(1, 2, false)
     common.move(2, 4, true)
@@ -67,10 +75,9 @@ while(true) {
     // all boost
     click(1678, 908)
     sleep(1300)
-    // attack
-    click(2020, 929)
-    sleep(12100)
-
+    common.start_attack(1000)
+    while (!common.checkCombatEnd())
+        sleep(1000);
 
     // 瞎鸡儿点
     click(1463, 751)

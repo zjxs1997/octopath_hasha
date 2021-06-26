@@ -1,12 +1,18 @@
 // 现在的这些脚本都需要估算战斗时间，需要更便捷的方式检测战斗结束
 // 比如检测截图中是否出现attack按钮
 
-// 另外，这个脚本因为暂时用不上，所以还没有写周回配置
+// 另外，这个脚本因为暂时用不上了，所以还没有写周回配置
 
 
 auto()
 
 var common = require("lib.js");
+
+//截屏权限请求
+if (!requestScreenCapture(true)) {
+    toast("请求截图失败");
+    exit();
+}
 
 while (true) {
     common.click_little_map()

@@ -11,11 +11,19 @@ auto()
 
 var common = require("lib.js");
 
+//截屏权限请求
+if (!requestScreenCapture(true)) {
+    toast("请求截图失败");
+    exit();
+}
+
 while (true) {
     common.click_little_map()
     // 点图书馆位置
     click(950, 605)
-    sleep(18500)
+    sleep(1000)
+    while (!common.checkStanding())
+        sleep(1000);
 
     common.click_little_map()
     // 点小地图npc位置
@@ -35,7 +43,9 @@ while (true) {
         common.move(1, 3)
         common.move(3, 2)
         common.all_boost()
-        common.start_attack(13800)
+        common.start_attack(1000)
+        while (!common.checkCombat())
+            sleep(1000);
 
         // turn 2
         common.all_switch()
@@ -44,7 +54,9 @@ while (true) {
         common.all_boost()
         common.move(1, 3)
         common.move(2, 4)
-        common.start_attack(13800)
+        common.start_attack(1000)
+        while (!common.checkCombat())
+            sleep(1000);
 
         // turn 3
         common.move(1, 2)
@@ -52,7 +64,9 @@ while (true) {
         common.move(3, 3)
         common.move(4, 4)
         common.all_boost()
-        common.start_attack(15800)
+        common.start_attack(1000)
+        while (!common.checkCombatEnd())
+            sleep(1000);
 
         // 战斗结束
         // 瞎鸡儿点
