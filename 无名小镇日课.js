@@ -54,18 +54,22 @@ coast_coordinates = [
 
 // 平a打不动了呀
 mountain_coordinates = [
+    [1186, 253],            // boss
     [1551, 628],            // next
 ]
 
 sun_coordinates = [
+    [1168, 280],
     [1370, 630]
 ]
 
 river_coordinates = [
+    [1192, 233],
     [1454, 703]
 ]
 
 cliff_coordinates = [
+    [1175, 292],
     [1624, 623]
 ]
 
@@ -74,10 +78,10 @@ all_coordinates = [
     frost_coordinates,
     flat_coordinates,
     coast_coordinates,
-    // mountain_coordinates,
-    // sun_coordinates,
-    // river_coordinates,
-    // cliff_coordinates,
+    mountain_coordinates,
+    sun_coordinates,
+    river_coordinates,
+    cliff_coordinates,
 ]
 
 
@@ -347,6 +351,7 @@ function move_upward() {
     swipe(1645, 849, 1645, 200, 2000)
 }
 
+// 平a打怪
 function fight() {
     while (1) {
         if (common.checkCombat()) {
@@ -361,6 +366,56 @@ function fight() {
         }
         sleep(1000);
     }
+}
+function fight_mountain() {
+    // turn 1
+    common.move(1, 2, true)
+    common.move(2, 3, true)
+    common.move(3, 3, false)
+    common.move(4, 3, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 2, false)
+    common.move(2, 4, true)
+    common.move(3, 2, true)
+    common.move(4, 2, true)
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+function fight_dessert() {
+    common.move(1, 2, true)
+    common.move(2, 3, true)
+    common.move(3, 3, false)
+    common.move(4, 3, true)
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+function fight_river() {
+    common.move(1, 2, true)
+    common.move(2, 3, true)
+    common.move(3, 2, true)
+    common.move(4, 3, true)
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+function fight_cliff() {
+    common.move(1, 2, true)
+    common.move(2, 3, true)
+    common.move(3, 3, false)
+    common.move(4, 2, false)
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
 }
 
 
@@ -397,7 +452,16 @@ function do_tower() {
             }
             move_upward();
             while (!common.checkCombat()) sleep(1000);
-            fight();
+            if (cor_index < 4)
+                fight();
+            else if (cor_index == 4)
+                fight_mountain();
+            else if (cor_index == 5)
+                fight_dessert();
+            else if (cor_index == 6)
+                fight_river();
+            else if (cor_index == 7)
+                fight_cliff();
         }
     }
 }
@@ -728,9 +792,220 @@ function xishui() {
 
 }
 
+function yinxue() {
+    // 进篝火
+    move_upward()
+    while (!common.checkStanding()) sleep(1000);
+    click(1224, 182)
+    sleep(1000)
+    click(934, 710)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 去frost地区
+    click(1619, 225)
+    sleep(5500)
+    click(1513, 600)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 左边的草
+    common.click_little_map()
+    click(1057, 855)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 4, true)
+        common.move(2, 4, false)
+        common.move(3, 3, false)
+        common.move(4, 3, true)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 右边的猫头鹰
+    common.click_little_map()
+    click(1292, 853)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 4, true)
+        common.move(2, 3, true)
+        common.move(3, 3, false)
+        common.move(4, 2, false)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 左上角的熊
+    common.click_little_map()
+    click(1068, 705)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 2, false)
+        common.move(2, 3, false)
+        common.move(3, 4, false)
+        common.move(4, 2, false)
+        common.start_attack(1000)
+        while (!common.checkCombat()) sleep(1000);
+
+        // turn 2
+        common.move(1, 4, true)
+        common.move(2, 3, true)
+        common.move(3, 3, false)
+        common.move(4, 2, false)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+}
+
+function bizhi() {
+    // 进篝火
+    move_upward()
+    while (!common.checkStanding()) sleep(1000);
+    click(1224, 182)
+    sleep(1000)
+    click(934, 710)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 去forest地区
+    click(844, 232)
+    sleep(5500)
+    click(1513, 600)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 左边rat king
+    common.click_little_map()
+    click(1044, 836)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    // 有点勉强
+    {
+        // turn 1
+        common.move(1, 2, true)
+        common.move(2, 2, false)
+        common.move(3, 4, false)
+        common.move(4, 2, true)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 右边药师
+    common.click_little_map()
+    click(1340, 825)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 3, false)
+        common.move(2, 3, true)
+        common.move(3, 3, true)
+        common.move(4, 1, true)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 右上角剑士
+    common.click_little_map()
+    click(1322, 642)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 2, false)
+        common.move(2, 4, false)
+        common.move(3, 3, true)
+        common.move(4, 4, false)
+        common.start_attack(1000)
+        while (!common.checkCombat()) sleep(1000);
+
+        // turn 2
+        common.move(1, 2, true)
+        common.move(2, 4, false)
+        common.move(3, 3, false)
+        common.move(4, 4, false)
+        common.all_boost();
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 左边 rat king
+    common.click_little_map()
+    click(1015, 642)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 2, false)
+        common.move(2, 4, false)
+        common.move(3, 3, false)
+        common.move(4, 4, false)
+        common.start_attack(1000)
+        while (!common.checkCombat()) sleep(1000);
+
+        // turn 2
+        common.move(1, 2, true)
+        common.move(2, 4, false)
+        common.move(3, 3, false)
+        common.move(4, 3, false)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
+    // 左边虫子
+    common.click_little_map()
+    click(866, 637)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.move(1, 3, false)
+        common.all_boost()
+        common.move(3, 3, false)
+        common.start_attack(1000)
+        while (!common.checkCombat()) sleep(1000);
+
+        // turn 2
+        common.move(1, 2, true)
+        common.move(2, 2, false)
+        common.move(3, 4, false)
+        common.move(4, 2, true)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+}
+
 
 // 流程：篝火2
-common.return_to_hotel_door();
+
+tower2flame();
+flame2tower();
+
 switch_team(-1);
 
 shayan();
@@ -741,6 +1016,20 @@ flame2tower();
 switch_team(2);
 
 xishui();
+
+tower2flame();
+flame2tower();
+
+switch_team(3);
+
+yinxue();
+
+tower2flame();
+flame2tower();
+
+switch_team(2);
+
+bizhi();
 
 
 
