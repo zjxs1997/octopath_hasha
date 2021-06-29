@@ -815,7 +815,7 @@ function yinxue() {
     while (!common.checkCombat()) sleep(1000);
     {
         // turn 1
-        common.move(1, 4, true)
+        common.move(1, 4, false)
         common.move(2, 4, false)
         common.move(3, 3, false)
         common.move(4, 3, true)
@@ -826,6 +826,7 @@ function yinxue() {
     }
 
     // 右边的猫头鹰
+    // 艾维斯和姆露速度比较慢，会吃点伤害
     common.click_little_map()
     click(1292, 853)
     while (!common.checkStanding()) sleep(1000);
@@ -833,8 +834,8 @@ function yinxue() {
     while (!common.checkCombat()) sleep(1000);
     {
         // turn 1
-        common.move(1, 4, true)
-        common.move(2, 3, true)
+        common.move(1, 4, false)
+        common.move(2, 4, false)
         common.move(3, 3, false)
         common.move(4, 2, false)
         common.all_boost()
@@ -851,7 +852,7 @@ function yinxue() {
     while (!common.checkCombat()) sleep(1000);
     {
         // turn 1
-        common.move(1, 2, false)
+        common.move(1, 2, true)
         common.move(2, 3, false)
         common.move(3, 4, false)
         common.move(4, 2, false)
@@ -860,7 +861,7 @@ function yinxue() {
 
         // turn 2
         common.move(1, 4, true)
-        common.move(2, 3, true)
+        common.move(2, 3, false)
         common.move(3, 3, false)
         common.move(4, 2, false)
         common.all_boost()
@@ -868,6 +869,34 @@ function yinxue() {
         while (!common.checkCombatEnd()) sleep(1000);
         end_combat();
     }
+
+    // 变色龙，不知道会不会有睡眠之类的技能导致翻车
+    common.click_little_map()
+    click(1286, 693)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    while (!common.checkCombat()) sleep(1000);
+    {
+        // turn 1
+        common.all_switch()
+        common.move(1, 4, false)
+        common.move(2, 2, false)
+        common.move(3, 2, false)
+        common.move(4, 4, false)
+        common.start_attack(1000)
+        while (!common.checkCombat()) sleep(1000);
+
+        // turn 2
+        common.move(1, 1, false)
+        common.move(2, 2, false)
+        common.move(3, 3, false)
+        common.move(4, 3, false)
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+        end_combat();
+    }
+
 }
 
 function bizhi() {
