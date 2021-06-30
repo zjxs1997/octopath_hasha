@@ -217,7 +217,7 @@ while (1) {
         if (common.checkCombat()) {
             toastLog("进入战斗")
             totalBattle++;
-            sleep(2000);
+            sleep(500);
             var res_val = common.checkCat()
             if (res_val) {
                 toast("是猫，好耶")
