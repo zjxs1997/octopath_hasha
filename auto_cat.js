@@ -215,12 +215,10 @@ while (1) {
     while(i < 10 && kill_cat_times < 3) {
         sleep(2500);
         if (common.checkCombat()) {
-            toastLog("进入战斗")
             totalBattle++;
             sleep(500);
             var res_val = common.checkCat()
             if (res_val) {
-                toast("是猫，好耶")
                 if (res_val == 1) {
                     catBattle++;
                     fightCat();
@@ -235,7 +233,6 @@ while (1) {
                     break;
                 }
             } else {
-                toast("溜了溜了")
                 click(1191, 939)
                 sleep(2500)
             }

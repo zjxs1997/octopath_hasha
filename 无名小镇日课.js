@@ -264,7 +264,6 @@ nuts();
 common.click_little_map()
 click(1613, 656)
 while (!common.checkStanding()) sleep(1000);
-//todo
 
 // 左上角乌龟
 common.click_little_map()
@@ -277,9 +276,6 @@ common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
 end_combat();
-// 瞎鸡儿点
-click(1463, 751)
-sleep(2000)
 
 // 上方狼
 common.click_little_map()
@@ -292,9 +288,6 @@ common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
 end_combat();
-// 瞎鸡儿点
-click(1463, 751)
-sleep(2000)
 
 // 下方树
 common.click_little_map()
@@ -307,9 +300,6 @@ common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
 end_combat();
-// 瞎鸡儿点
-click(1463, 751)
-sleep(2000)
 
 // 右边树2
 common.click_little_map()
@@ -322,9 +312,6 @@ common.start_attack(1000)
 while (!common.checkCombatEnd())
     sleep(1000);
 end_combat();
-// 瞎鸡儿点
-click(1463, 751)
-sleep(2000)
 
 
 
