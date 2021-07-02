@@ -219,6 +219,23 @@ functions.move = function (person, skill, do_switch) {
     sleep(1000)
 }
 
+functions.swipe_left = function () {
+    swipe(1548, 589, 674, 589, 2000)
+}
+
+functions.swipe_right = function () {
+    swipe(674, 589, 1548, 589, 2000)
+}
+
+functions.swipe_up = function () {
+    swipe(1738, 700, 1738, 200, 2000)
+}
+
+functions.swipe_down = function () {
+    swipe(1738, 200, 1738, 700, 2000)
+}
+
+
 // 召唤支援者
 functions.use_first_support = function () {
     click(1352, 922)
@@ -324,6 +341,7 @@ functions.return_to_hotel_door = function () {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
+    // 这个其实可以用while checkStanding，但是暂时就先这样吧
     sleep(8500)
 }
 
