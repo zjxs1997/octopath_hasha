@@ -1496,22 +1496,51 @@ bizhi();
 
 
 
+
+
 // ------------------------------------------------
 // ------------------------------------------------
 
+function flame2town() {
+    common.click_world_map();
+    click(1602, 418)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
 
+function sell_in_flame() {
+    common.click_little_map();
+    click(1084, 652)
+    sleep(1000);
+    while (!common.checkStanding()) sleep(1000);
 
+    common.click_little_map()
+    click(1240, 678)
+    sleep(1000);
+    while (!common.checkStanding()) sleep(1000);
+
+    click(1464, 367)
+    sleep(2500)
+    click(1464, 367)
+    sleep(2500)
+    click(1464, 367)
+    sleep(2500)
+    // 卖出东西了，点ok
+    click(1266, 919)
+    sleep(2500)
+    click(2081, 67)
+    sleep(1500)
+}
 
 // 流程：回到无名小镇
-common.click_world_map()
-click(1230, 641);
-sleep(1400)
-// 到这里去
-click(1870, 905)
-sleep(1300)
-// fast travel的确认
-click(1432, 695)
-while (!common.checkStanding()) sleep(1000);
+tower2flame();
+sell_in_flame();
+flame2town();
 
 // 流程：去画家老婆房里。。。
 common.click_little_map()

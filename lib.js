@@ -222,18 +222,26 @@ functions.move = function (person, skill, do_switch) {
 functions.swipe_left = function () {
     swipe(1548, 589, 674, 589, 2000)
 }
-
 functions.swipe_right = function () {
     swipe(674, 589, 1548, 589, 2000)
 }
-
 functions.swipe_up = function () {
     swipe(1738, 700, 1738, 200, 2000)
 }
-
 functions.swipe_down = function () {
     swipe(1738, 200, 1738, 700, 2000)
 }
+
+functions.end_combat = function () {
+    // 战斗结束，瞎鸡儿三点
+    click(1463, 751)
+    sleep(1500)
+    click(1463, 751)
+    sleep(1500)
+    click(1463, 751)
+    sleep(5600)
+}
+
 
 
 // 召唤支援者
