@@ -144,7 +144,6 @@ function challenge() {
 }
 
 challenge();
-toast("end challenge");
 
 
 
@@ -158,22 +157,27 @@ function queren() {
 }
 function farm() {
     // 流程：牧场
+    // 位置完全不一样了，得重写
     common.click_little_map()
     click(794, 647)
     while (!common.checkStanding()) sleep(1000);
+    // 羊1
+    click(1180, 480)
+    sleep(1200)
+    queren()
     // 草泥马1
-    click(1175, 462)
+    click(1366, 446)
     sleep(1200)
     queren()
     // 草泥马2
-    click(1360, 459)
-    sleep(1200)
-    queren()
-    // 羊1
-    click(1886, 340)
-    sleep(4000)
+    click(2100, 518)
+    sleep(4200)
     queren()
     // 羊2
+    click(1340, 299)
+    sleep(2500)
+    queren()
+    // 草泥马3
     click(1056, 419)
     sleep(2000)
     queren()
@@ -648,6 +652,7 @@ function shayan4() {
     end_combat()
 }
 
+// 这个在测试的时候shayan3不知道出了什么问题，技能没点对。。。
 function shayan() {
     // 进篝火
     move_upward()
@@ -901,6 +906,7 @@ function xishui() {
         while (!common.checkCombat()) sleep(1000);
 
         // turn 2
+        // 睡着了，有点小翻车。。。
         common.move(1, 4, false)
         common.move(2, 3, false)
         common.move(3, 3, false)
@@ -979,6 +985,119 @@ function xishui() {
     }
 
 
+}
+
+// 这个好像也有问题，不过没有翻车
+function hebi() {
+    // 进篝火
+    move_upward()
+    while (!common.checkStanding()) sleep(1000);
+    click(1224, 182)
+    sleep(1000)
+    click(934, 710)
+    while (!common.checkStanding()) sleep(1000);
+    
+    // 去河流地区
+    common.click_little_map();
+    click(805, 638)
+    while (!common.checkStanding()) sleep(1000);
+    click(1049, 441)
+    sleep(1000)
+    click(1513, 600)
+    while (!common.checkStanding()) sleep(1000);
+
+    common.click_little_map();
+    click(1170, 250)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward()
+
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(4, 4, false)
+    common.all_boost();
+    // 特蕾莎要单独写
+    click(2041, 126)
+    sleep(1000)
+    click(598, 458)
+    sleep(1000)
+    click(1537, 409)
+    sleep(1000)
+
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 3, false)
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 3
+    common.move(1, 3, false)
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 4
+
+    // ddl
+    common.move(2, 4, false)
+
+    // 管家
+    click(2041, 531)
+    sleep(1000)
+    click(800, 700)
+    sleep(1000)
+    click(1537, 409)
+    sleep(1000)
+
+    common.all_boost()
+    common.move(1, 3, false)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 5
+    common.start_attack(1000)
+    common.move(1, 2, false)
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.move(4, 3, false)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 6
+    common.move(1, 2, false)
+    common.move(2, 2, true)
+    common.move(3, 2, false)
+    common.all_boost()
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 7
+    common.move(1, 2, true)
+    common.all_boost()
+    common.move(2, 2, false)
+    common.move(3, 4, false)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 8
+    common.move(1, 2, true)
+    common.move(2, 2, false)
+    common.move(3, 2, false)
+    common.move(4, 4, false)
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
 }
 
 // -------------------------------------------------------
@@ -1475,7 +1594,15 @@ xishui();
 tower2flame();
 flame2tower();
 
-switch_team(2);
+switch_team(1);
+
+hebi();
+
+tower2flame();
+flame2tower();
+
+
+switch_team(1);
 
 bingjin();
 
