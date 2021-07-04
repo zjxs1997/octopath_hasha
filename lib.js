@@ -23,17 +23,17 @@ var functions = {};
 // 检查进入战斗后是否出现猫
 var cat = images.read("/storage/emulated/0/checkPic/mycat.jpg")
 var littleCat = images.read("/storage/emulated/0/checkPic/mylitcat.jpg")
-functions.checkCat = function() {
+functions.checkCat = function () {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, cat, {
         region: [668, 392, 500, 500]
     })
-    if (key){
+    if (key) {
         return 1;
-    }     
+    }
     var key2 = findImage(img, littleCat, {
         // region: []
     })
@@ -45,11 +45,11 @@ functions.checkCat = function() {
 }
 // 人物停住的时候，返回1，原理是检查菜单左下角
 var halt = images.read("/storage/emulated/0/checkPic/haltpic.jpg")
-functions.checkStanding = function() {
+functions.checkStanding = function () {
     var haltX = 400;
     var haltY = 900;
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, halt, {
@@ -63,12 +63,12 @@ functions.checkStanding = function() {
 }
 // 判断是否进入战斗，进入返回1，原理是检查战斗中的逃走选项是否存在
 var escape = images.read("/storage/emulated/0/checkPic/startpic1.jpg")
-functions.checkCombat = function() {
+functions.checkCombat = function () {
     var escapeX = 1170;
     var esacapeY = 900;
     //截图判断
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, escape, {
@@ -85,7 +85,7 @@ var coin = images.read("/storage/emulated/0/checkPic/coin.jpeg");
 functions.checkCombatEnd = function () {
     //截图判断
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, coin, {
@@ -103,11 +103,11 @@ functions.checkCombatEnd = function () {
 var medal = images.read("/storage/emulated/0/checkPic/medal.jpg");
 functions.checkMedal = function () {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var result = findImage(img, medal, {
-        region: [970, 450, 50, 50]
+        region: [970, 450, 100, 100]
     });
     img.recycle();
     if (result)
@@ -120,7 +120,7 @@ functions.checkMedal = function () {
 var closewin = images.read("/storage/emulated/0/checkPic/closewin.jpg");
 functions.checkCloseWin = function () {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var result = findImage(img, closewin, {
@@ -135,10 +135,10 @@ functions.checkCloseWin = function () {
 
 //判断是否在jjc中展开战斗
 var arena_escape = images.read("/storage/emulated/0/checkPic/arena_escape.jpg")
-functions.checkArenaCombat = function() {
+functions.checkArenaCombat = function () {
     //截图判断
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, arena_escape, {
@@ -156,7 +156,7 @@ functions.checkArenaCombat = function() {
 var death2 = images.read("/storage/emulated/0/checkPic/death2.png");
 functions.checkBackDeath = function () {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var result = images.matchTemplate(img, death2, {
@@ -181,7 +181,7 @@ functions.checkBackDeath = function () {
 
 // 点选技能
 functions.move = function (person, skill, do_switch) {
-    switch(person) {
+    switch (person) {
         case 1:
             click(2041, 126)
             break;
@@ -199,10 +199,10 @@ functions.move = function (person, skill, do_switch) {
 
     if (do_switch) {
         click(1545, 873)
-        sleep(1000)    
+        sleep(1000)
     }
 
-    switch(skill) {
+    switch (skill) {
         case 1:
             click(1609, 284)
             break;
@@ -256,7 +256,7 @@ functions.use_first_support = function () {
 }
 
 // all boost
-functions.all_boost = function() {
+functions.all_boost = function () {
     click(1678, 908)
     sleep(1300)
 }
@@ -350,7 +350,7 @@ functions.return_to_hotel_door = function () {
     // fast travel的确认
     click(1432, 695)
     // 这个其实可以用while checkStanding，但是暂时就先这样吧
-    sleep(8500)
+    while (!functions.checkStanding()) sleep(1000);
 }
 
 // 点右上角小地图
