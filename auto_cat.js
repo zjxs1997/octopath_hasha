@@ -30,21 +30,18 @@ function hole2town() {
     while (!common.checkStanding()) sleep(1000);
 }
 
-// シェパードロック先去ドニエスク
+// シェパードロック先点ドニエスク
 // 然后再去霧灯かりの滝壺
 function town2hole() {
     common.click_world_map()
     common.click_map_shrink()
     click(409, 853)
     sleep(1400)
-    // 到这里去
-    click(1870, 905)
-    sleep(1300)
-    // fast travel的确认
-    click(1432, 695)
-    while (!common.checkStanding()) sleep(1000);
 
-    common.click_world_map()
+    click(1247, 524)
+    click(1247, 524)
+    sleep(1600)
+
     click(1531, 610)
     sleep(1400)
     // 到这里去
@@ -63,7 +60,7 @@ function heal_and_hire_worker() {
     sleep(3600)
     // 旅店柜台
     click(1234, 441)
-    sleep(3500)    
+    sleep(3500)
     // 瞎鸡儿点
     click(1463, 751)
     sleep(1100)
@@ -212,7 +209,7 @@ while (1) {
     }
 
     i = 0;
-    while(i < 10 && kill_cat_times < 3) {
+    while (i < 10 && kill_cat_times < 3) {
         sleep(2500);
         if (common.checkCombat()) {
             totalBattle++;
@@ -228,7 +225,7 @@ while (1) {
                     littleCatBattle++;
                     fightLittleCat();
                 }
-                log('遇到'+totalBattle+'次战斗，其中' + catBattle +'次猫猫，' +  littleCatBattle + '次小猫猫');
+                log('遇到' + totalBattle + '次战斗，其中' + catBattle + '次猫猫，' + littleCatBattle + '次小猫猫');
                 if (kill_cat_times > 2) {
                     break;
                 }

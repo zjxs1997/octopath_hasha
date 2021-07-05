@@ -153,9 +153,9 @@ challenge();
 
 function queren() {
     click(1269, 639)
-    sleep(1000)    
+    sleep(1000)
 }
-function farm() {
+function shit_farm() {
     // 流程：牧场
     // 位置完全不一样了，得重写
     common.click_little_map()
@@ -188,7 +188,7 @@ function farm() {
 }
 
 // 没问题了
-farm();
+shit_farm();
 
 
 // ------------------------------------------------
@@ -434,7 +434,7 @@ function do_tower() {
             common.click_little_map();
             click(x, y);
             while (!common.checkStanding()) sleep(1000);
-            if (cor_index == coordinates.length-1) {
+            if (cor_index == coordinates.length - 1) {
                 click(1450, 419)
                 sleep(800)
                 click(1544, 610)
@@ -496,7 +496,7 @@ function tower2flame() {
     sleep(1000);
     while (!common.checkStanding()) sleep(1000);
     click(1317, 440)
-    sleep(3500)    
+    sleep(3500)
     // 瞎鸡儿点
     click(1463, 751)
     sleep(1100)
@@ -535,7 +535,7 @@ function go_or_run() {
     while (result == 1) {
         click(1198, 933);
         result = checker();
-    }    
+    }
 }
 
 
@@ -544,8 +544,8 @@ function go_or_run() {
 // ----------------------- 砂岩系列 -----------------------
 // -------------------------------------------------------
 
+// 暴徒
 function shayan1() {
-    // 暴徒
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.move(2, 1, true)
@@ -565,8 +565,8 @@ function shayan1() {
     end_combat();
 }
 
+// 魔导机
 function shayan2() {
-    // 魔导机
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.move(1, 4, false)
@@ -588,8 +588,8 @@ function shayan2() {
     end_combat();
 }
 
+// 魔导机兵
 function shayan3() {
-    // 魔导机兵
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.move(4, 3, true)
@@ -620,8 +620,8 @@ function shayan3() {
     end_combat()
 }
 
+// 魔导飞机
 function shayan4() {
-    // 魔导飞机
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.move(1, 4, false)
@@ -661,7 +661,7 @@ function shayan() {
     sleep(1000)
     click(934, 710)
     while (!common.checkStanding()) sleep(1000);
-    
+
     // 去沙漠地区
     common.click_little_map();
     click(988, 811)
@@ -670,7 +670,7 @@ function shayan() {
     sleep(1000)
     click(1513, 600)
     while (!common.checkStanding()) sleep(1000);
-    
+
     // 左下角暴徒
     common.click_little_map()
     click(903, 785);
@@ -807,11 +807,11 @@ function shayan_wide() {
     common.click_little_map()
     click(832, 248)
     go_or_run();
-    
+
     common.click_little_map()
     click(877, 414)
     go_or_run();
-    
+
     common.click_little_map();
     click(1423, 600)
     go_or_run();
@@ -871,6 +871,96 @@ function shayan_wide() {
 // -------------------------------------------------------
 
 
+
+
+
+// -------------------------------------------------------
+// ----------------------- 溪水系列 -----------------------
+// -------------------------------------------------------
+
+
+// 小青蛙
+function xishui1() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 4, false)
+    common.move(2, 1, false)
+    common.move(4, 4, false)
+    common.all_boost()
+    common.move(3, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 2, true)
+    common.move(2, 3, false)
+    common.move(3, 3, false)
+    common.move(4, 4, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+
+    end_combat()
+}
+
+// 大青蛙
+function xishui2() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 2, false)
+    common.move(2, 2, false)
+    common.move(3, 4, false)
+    common.move(4, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 1, false)
+    common.move(2, 3, false)
+    common.move(4, 4, false)
+    common.all_boost()
+    // 这个大概写错了。。。
+    common.move(3, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 3
+    common.move(1, 3, true)
+    common.move(2, 3, false)
+    common.move(3, 3, false)
+    common.move(4, 4, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+
+    end_combat()
+
+}
+
+// 蜗牛
+function xishui3() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 2, false)
+    common.move(2, 3, true)
+    common.move(3, 3, true)
+    common.move(4, 2, true)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 3, false)
+    common.move(2, 3, false)
+    common.move(3, 4, false)
+    common.move(4, 2, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+
+    end_combat()
+
+}
+
 function xishui() {
     // 进篝火
     move_upward()
@@ -879,7 +969,7 @@ function xishui() {
     sleep(1000)
     click(934, 710)
     while (!common.checkStanding()) sleep(1000);
-    
+
     // 去河流地区
     common.click_little_map();
     click(805, 638)
@@ -894,98 +984,160 @@ function xishui() {
     click(1320, 827)
     while (!common.checkStanding()) sleep(1000);
     move_upward();
-    while (!common.checkCombat()) sleep(1000);
+    xishui1()
 
-    {
-        // turn 1
-        common.move(1, 2, false)
-        common.move(2, 2, false)
-        common.move(3, 4, false)
-        common.move(4, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        // 睡着了，有点小翻车。。。
-        common.move(1, 4, false)
-        common.move(2, 3, false)
-        common.move(3, 3, false)
-        common.move(4, 4, false)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-
-        end_combat()
-    }
 
     // 右边大青蛙
     common.click_little_map()
     click(1327, 632)
     while (!common.checkStanding()) sleep(1000);
     move_upward();
-    while (!common.checkCombat()) sleep(1000);
+    xishui2();
 
-    {
-        // turn 1
-        common.move(1, 2, false)
-        common.move(2, 2, false)
-        common.move(3, 4, false)
-        common.move(4, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(1, 1, false)
-        common.move(2, 3, false)
-        common.move(4, 4, false)
-        common.all_boost()
-        // 这个大概写错了。。。
-        common.move(3, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 3
-        common.move(1, 3, true)
-        common.move(2, 3, false)
-        common.move(3, 3, false)
-        common.move(4, 4, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-
-        end_combat()
-    }
 
     // 左边蜗牛
     common.click_little_map()
     click(860, 632)
     while (!common.checkStanding()) sleep(1000);
     move_upward();
-    while (!common.checkCombat()) sleep(1000);
-
-    {
-        // turn 1
-        common.move(1, 2, false)
-        common.move(2, 3, true)
-        common.move(3, 3, true)
-        common.move(4, 2, true)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(1, 3, false)
-        common.move(2, 3, false)
-        common.move(3, 4, false)
-        common.move(4, 2, false)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-
-        end_combat()
-    }
-
-
+    xishui3()
 }
+
+function tower2river() {
+    common.click_world_map()
+    common.click_map_shrink()
+    click(619, 817)
+    sleep(1000)
+    click(1255, 759)
+    sleep(1000)
+    click(1149, 878)
+    sleep(1000)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+    click(1245, 271)
+    sleep(1000);
+    while (!common.checkStanding()) sleep(1000);
+    click(1306, 366)
+    sleep(3500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(2500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(2500)
+    // 确认宿屋，20块钱
+    click(1491, 716)
+    sleep(6000)
+    // 恢复后的确认
+    click(1236, 699)
+    sleep(1600)
+}
+
+function river2bank() {
+    common.click_world_map()
+    click(1029, 646)
+    sleep(1000)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
+
+function bank2river() {
+    common.click_world_map()
+    click(1427, 395)
+    sleep(1000)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+    click(1245, 271)
+    sleep(1000);
+    while (!common.checkStanding()) sleep(1000);
+    click(1306, 366)
+    sleep(3500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(2500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(2500)
+    // 确认宿屋，20块钱
+    click(1491, 716)
+    sleep(6000)
+    // 恢复后的确认
+    click(1236, 699)
+    sleep(1600)
+}
+
+function river2tower() {
+    common.click_world_map()
+    common.click_map_shrink()
+    click(2046, 223)
+    sleep(1600)
+    click(1285, 359)
+    sleep(1600)
+    click(980, 161)
+    sleep(1600)
+    click(1247, 524)
+    click(1247, 524)
+    sleep(1600)
+    click(1256, 406)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
+
+function xishui_wide() {
+    tower2river();
+    river2bank();
+
+    // 小青蛙
+    common.click_little_map()
+    click(1150, 345)
+    go_or_run();
+    common.swipe_right();
+    xishui1();
+
+    // 大青蛙
+    common.click_little_map()
+    click(1507, 724)
+    go_or_run();
+    common.swipe_up();
+    xishui2()
+
+    common.click_little_map()
+    click(702, 263)
+    go_or_run()
+    // 蜗牛
+    common.click_little_map()
+    click(779, 740)
+    go_or_run()
+    common.swipe_left()
+    xishui3()
+
+    bank2river();
+    river2tower();
+}
+
+
+
+// -------------------------------------------------------
+// --------------------- 溪水系列 end ---------------------
+// -------------------------------------------------------
+
 
 // 这个好像也有问题，不过没有翻车
 function hebi() {
@@ -996,7 +1148,7 @@ function hebi() {
     sleep(1000)
     click(934, 710)
     while (!common.checkStanding()) sleep(1000);
-    
+
     // 去河流地区
     common.click_little_map();
     click(805, 638)
@@ -1251,7 +1403,7 @@ function hole2flame() {
     sleep(1000);
     while (!common.checkStanding()) sleep(1000);
     click(1317, 440)
-    sleep(3500)    
+    sleep(3500)
     // 瞎鸡儿点
     click(1463, 751)
     sleep(1100)
@@ -1273,7 +1425,7 @@ function yinxue_wide() {
     go_or_run();
     swipe(674, 589, 1548, 589, 2000)
     yinxue2();
-    
+
     // 变色龙
     common.click_little_map()
     click(802, 288)
@@ -1590,9 +1742,7 @@ shayan_wide();
 switch_team(2);
 
 xishui();
-
-tower2flame();
-flame2tower();
+xishui_wide();
 
 switch_team(1);
 
