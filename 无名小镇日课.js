@@ -51,7 +51,6 @@ coast_coordinates = [
     [1547, 632],
 ]
 
-// 平a打不动了呀
 mountain_coordinates = [
     [1186, 253],            // boss
     [1551, 628],            // next
@@ -1216,11 +1215,11 @@ function hebi() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 5
-    common.start_attack(1000)
     common.move(1, 2, false)
     common.move(2, 2, false)
     common.move(3, 3, false)
     common.move(4, 3, false)
+    common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 6
@@ -1454,6 +1453,122 @@ function yinxue_wide() {
     hole2flame();
     flame2tower();
 }
+
+function goto_colab(floor) {
+    common.click_little_map()
+    click(957, 424)
+    while (!common.checkStanding()) sleep(1000);
+
+    common.click_little_map()
+    click(1041, 365)
+    while (!common.checkStanding()) sleep(1000);
+
+    common.click_little_map()
+    click(1300, 691)
+    while (!common.checkStanding()) sleep(1000);
+
+    click(977, 430)
+    sleep(1000)
+    if (floor == 2)
+        click(1504, 525)
+    else if (floor == 3)
+        click(1013, 660)
+    sleep(500)
+    while (!common.checkStanding()) sleep(1000);
+}
+
+function fight_colab() {
+    common.return_to_hotel_door()
+    goto_colab(3)
+
+    common.click_little_map()
+    click(744, 841)
+    go_or_run();
+
+    common.click_little_map()
+    click(758, 175)
+    go_or_run();
+    common.swipe_up()
+
+    // fight frog with yinxue
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.all_switch()
+    common.move(1, 3, false)
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.move(4, 2, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+
+    common.click_little_map();
+    click(786, 625)
+    go_or_run();
+
+    common.click_little_map();
+    click(1559, 699)
+    go_or_run()
+
+    common.click_little_map()
+    click(1026, 849)
+    go_or_run()
+    common.swipe_left()
+
+    // fight water with yinxue
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 4, false)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 3, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+
+
+    common.return_to_hotel_door()
+    goto_colab(2)
+    common.click_little_map()
+    click(1474, 769)
+    go_or_run()
+    common.swipe_left()
+
+    // fight frog-2 with yinxue
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(3, 3, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+
+    common.click_little_map()
+    click(1117, 920)
+    go_or_run()
+    common.swipe_down()
+
+    common.click_little_map()
+    click(807, 596)
+    go_or_run()
+
+    common.click_little_map()
+    click(1576, 296)
+    go_or_run()
+    common.swipe_up()
+
+    // fight ntr with yinxue
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(3, 3, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+
 
 // -------------------------------------------------------
 // --------------------- 银雪系列 end ---------------------
@@ -1762,6 +1877,8 @@ flame2tower();
 switch_team(1);
 
 yinxue();
+// to be tested
+fight_colab();
 yinxue_wide();
 
 
