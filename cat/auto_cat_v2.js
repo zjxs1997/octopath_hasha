@@ -1,4 +1,6 @@
-// 自动刷猫脚本，开局在霧灯かりの滝壺，并且叫满大工支援
+// 第二版，实现了无宿
+
+// 自动刷猫脚本，开局在霧灯かりの滝壺
 // 2号位管家， 1号技能刹那
 // 3号位闪达，2号技能行云流水
 // 5号位置提奥
@@ -54,6 +56,7 @@ function fightLittleCat_v2() {
     common.all_switch()
     common.move(1, 1, true)
     common.all_boost()
+    common.start_attack(500)
 
     var res = checker();
     // 战斗结束返回0，否则返回1
@@ -168,7 +171,6 @@ while (1) {
             sleep(500);
             var res_val = common.checkCat()
             if (res_val) {
-                device.vibrate(500)
                 if (res_val == 1) {
                     catBattle++;
                     fightCat();
