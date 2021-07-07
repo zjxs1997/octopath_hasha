@@ -323,6 +323,25 @@ end_combat();
 
 
 
+function checker() {
+    while (1) {
+        if (common.checkCombatEnd()) return 2;
+        if (common.checkCombat()) return 1;
+        if (common.checkStanding()) return 0;
+        sleep(3000);
+    }
+}
+
+function go_or_run() {
+    var result = checker();
+    while (result == 1) {
+        click(1198, 933);
+        result = checker();
+    }
+}
+
+
+
 // 流程：追忆之塔
 common.click_world_map()
 click(1153, 455)
@@ -384,7 +403,11 @@ function fight_dessert() {
     common.move(4, 3, true)
     common.all_boost();
     common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
+    var res = checker();
+    if (res == 1) {
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+    }
     end_combat();
 }
 function fight_river() {
@@ -520,22 +543,6 @@ function flame2tower() {
 }
 
 
-
-function checker() {
-    while (1) {
-        if (common.checkCombat()) return 1;
-        if (common.checkStanding()) return 0;
-        sleep(3000);
-    }
-}
-
-function go_or_run() {
-    var result = checker();
-    while (result == 1) {
-        click(1198, 933);
-        result = checker();
-    }
-}
 
 
 
@@ -1215,8 +1222,9 @@ function hebi() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 5
-    common.move(1, 2, false)
     common.move(2, 2, false)
+    common.all_boost()
+    common.move(1, 2, false)
     common.move(3, 3, false)
     common.move(4, 3, false)
     common.start_attack(1000)
@@ -1233,12 +1241,16 @@ function hebi() {
 
     // turn 7
     common.move(1, 2, true)
-    common.all_boost()
     common.move(2, 2, false)
-    common.move(3, 4, false)
+    common.move(3, 2, false)
+    common.all_boost()
     common.move(4, 3, false)
     common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
+    var res = checker();
+    if (res == 2) {
+        end_combat()
+        return
+    }
 
     // turn 8
     common.move(1, 2, true)
@@ -1545,28 +1557,29 @@ function fight_colab() {
     while (!common.checkCombatEnd()) sleep(1000);
     end_combat();
 
-    common.click_little_map()
-    click(1117, 920)
-    go_or_run()
-    common.swipe_down()
+    // 暂时不想找ntr的流程问题在哪里
+    // common.click_little_map()
+    // click(1117, 920)
+    // go_or_run()
+    // common.swipe_down()
 
-    common.click_little_map()
-    click(807, 596)
-    go_or_run()
+    // common.click_little_map()
+    // click(807, 596)
+    // go_or_run()
 
-    common.click_little_map()
-    click(1576, 296)
-    go_or_run()
-    common.swipe_up()
+    // common.click_little_map()
+    // click(1576, 296)
+    // go_or_run()
+    // common.swipe_up()
 
-    // fight ntr with yinxue
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(3, 3, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
+    // // fight ntr with yinxue
+    // while (!common.checkCombat()) sleep(1000);
+    // // turn 1
+    // common.move(3, 3, false)
+    // common.all_boost()
+    // common.start_attack(1000)
+    // while (!common.checkCombatEnd()) sleep(1000);
+    // end_combat();
 }
 
 
