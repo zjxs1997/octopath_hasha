@@ -212,20 +212,6 @@ function tower2sand() {
     // fast travel的确认
     click(1432, 695)
     while (!common.checkStanding()) sleep(1000);
-    click(1249, 283)
-    sleep(1000);
-    while (!common.checkStanding()) sleep(1000);
-    click(1396, 389)
-    sleep(3500)
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(1100)
-    // 确认宿屋，20块钱
-    click(1491, 716)
-    sleep(6000)
-    // 恢复后的确认
-    click(1236, 699)
-    sleep(1600)
 }
 
 function sand2palace() {
@@ -426,23 +412,6 @@ function tower2river() {
     // fast travel的确认
     click(1432, 695)
     while (!common.checkStanding()) sleep(1000);
-    click(1245, 271)
-    sleep(1000);
-    while (!common.checkStanding()) sleep(1000);
-    click(1306, 366)
-    sleep(3500)
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(2500)
-    // 瞎鸡儿点
-    click(1463, 751)
-    sleep(2500)
-    // 确认宿屋，20块钱
-    click(1491, 716)
-    sleep(6000)
-    // 恢复后的确认
-    click(1236, 699)
-    sleep(1600)
 }
 
 function river2bank() {
