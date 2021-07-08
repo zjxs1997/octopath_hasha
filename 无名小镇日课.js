@@ -36,7 +36,6 @@ frost_coordinates = [
 ]
 
 flat_coordinates = [
-    [1445, 786],            // beep，野猪
     [1196, 303],            // boss
     [1647, 638],
 ]
@@ -457,6 +456,8 @@ function do_tower() {
             click(x, y);
             while (!common.checkStanding()) sleep(1000);
             if (cor_index == coordinates.length - 1) {
+                if (word_index == all_coordinates.length - 1)
+                    break;
                 click(1450, 419)
                 sleep(800)
                 click(1544, 610)
