@@ -1,9 +1,9 @@
 // 新地图刷素材脚本
 
-// 开局需要在sunland新地图的洞穴
-// 角色：1号位泰雷兹，3号技能全雷
-// 3号位ddl，1号技能全风
-// 其他工具人拉满即可
+// 开局需要在granport的下水道
+// 角色：3号位泰雷兹，3号技能全雷
+// 1号位劳拉，2号位火舞，2号技能群火
+// 只需要这三个角色，劳拉带个加遇敌概率的饰品
 
 var battle_times = 0;
 
@@ -62,7 +62,7 @@ function town2hole() {
 function playerMove(f) {
     common.click_little_map();
     if (f) {
-        click(701, 599)
+        click(804, 481)
     } else {
         click(1611, 599)
     }
@@ -84,7 +84,6 @@ while (1) {
         town2hole();
         battle_times = 0;
         flag = true;
-        toastLog('xxx')
     }
 
     if (common.checkStanding()) {
@@ -96,18 +95,15 @@ while (1) {
     while (i < 10 && battle_times < 10) {
         sleep(2500)
         if (common.checkCombat()) {
-            toastLog("进入战斗")
-            battle_times++;
-            total_battle_times++;
-            sleep(2000)
-
+            sleep(500)
             if (common.checkCat()) {
-                toastLog("草，怎么是猫")
                 // 逃跑
                 click(1211, 957)
                 sleep(6000)
                 continue;
             }
+            battle_times++;
+            total_battle_times++;
 
             common.all_switch()
             common.move(1, 3, false)
