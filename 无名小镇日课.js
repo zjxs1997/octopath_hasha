@@ -260,60 +260,63 @@ nuts();
 
 
 
-
-
 // 流程：无名荒野
-common.click_little_map()
-click(1613, 656)
-while (!common.checkStanding()) sleep(1000);
+function wild() {
 
-// 左上角乌龟
-common.click_little_map()
-click(1107, 200)
-while (!common.checkStanding()) sleep(1000);
-swipe(674, 589, 1548, 589, 2000)
-while (!common.checkCombat()) sleep(1000);
-common.all_boost();
-common.start_attack(1000)
-while (!common.checkCombatEnd())
-    sleep(1000);
-end_combat();
+    common.click_little_map()
+    click(1613, 656)
+    while (!common.checkStanding()) sleep(1000);
 
-// 上方狼
-common.click_little_map()
-click(1224, 234)
-while (!common.checkStanding()) sleep(1000);
-swipe(1548, 589, 674, 590, 2000)
-while (!common.checkCombat()) sleep(1000);
-common.all_boost();
-common.start_attack(1000)
-while (!common.checkCombatEnd())
-    sleep(1000);
-end_combat();
+    // 左上角乌龟
+    common.click_little_map()
+    click(1107, 200)
+    while (!common.checkStanding()) sleep(1000);
+    swipe(674, 589, 1548, 589, 2000)
+    while (!common.checkCombat()) sleep(1000);
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd())
+        sleep(1000);
+    end_combat();
 
-// 下方树
-common.click_little_map()
-click(1546, 734)
-while (!common.checkStanding()) sleep(1000);
-swipe(674, 589, 1548, 589, 2000)
-while (!common.checkCombat()) sleep(1000);
-common.all_boost();
-common.start_attack(1000)
-while (!common.checkCombatEnd())
-    sleep(1000);
-end_combat();
+    // 上方狼
+    common.click_little_map()
+    click(1224, 234)
+    while (!common.checkStanding()) sleep(1000);
+    swipe(1548, 589, 674, 590, 2000)
+    while (!common.checkCombat()) sleep(1000);
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd())
+        sleep(1000);
+    end_combat();
 
-// 右边树2
-common.click_little_map()
-click(1599, 430)
-while (!common.checkStanding()) sleep(1000);
-swipe(925, 708, 300, 708, 2000)
-while (!common.checkCombat()) sleep(1000);
-common.all_boost();
-common.start_attack(1000)
-while (!common.checkCombatEnd())
-    sleep(1000);
-end_combat();
+    // 下方树
+    common.click_little_map()
+    click(1546, 734)
+    while (!common.checkStanding()) sleep(1000);
+    swipe(674, 589, 1548, 589, 2000)
+    while (!common.checkCombat()) sleep(1000);
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd())
+        sleep(1000);
+    end_combat();
+
+    // 右边树2
+    common.click_little_map()
+    click(1599, 430)
+    while (!common.checkStanding()) sleep(1000);
+    swipe(925, 708, 300, 708, 2000)
+    while (!common.checkCombat()) sleep(1000);
+    common.all_boost();
+    common.start_attack(1000)
+    while (!common.checkCombatEnd())
+        sleep(1000);
+    end_combat();
+}
+
+wild();
 
 
 
@@ -1588,6 +1591,310 @@ function fight_colab() {
 // --------------------- 银雪系列 end ---------------------
 // -------------------------------------------------------
 
+
+// -------------------------------------------------------
+// ----------------------- 珊瑚系列 -----------------------
+// -------------------------------------------------------
+
+
+
+// 鼻涕虫
+function shanhu1() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.all_switch()
+    common.move(1, 2, false)
+    common.move(2, 3, true)
+    common.move(3, 3, false)
+    common.move(4, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 2, false)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 2, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat()
+}
+
+// 骨头
+function shanhu2() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.all_switch()
+    common.move(1, 4, false)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 4, false)
+    common.move(2, 2, false)
+    common.move(3, 3, true)
+    common.move(4, 2, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat()
+}
+
+// 古代遗物
+function shanhu3() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 4, true)
+    common.move(2, 3, false)
+    common.move(3, 4, false)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 2, false)
+    common.move(4, 4, true)
+    common.move(3, 3, false)
+    common.all_boost()
+    common.move(2, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 3
+    common.move(1, 2, false)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 2, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat()
+}
+
+// 铠甲
+function shanhu4() {
+    while (!common.checkCombat()) sleep(1000);
+    // turn 1
+    common.move(1, 3, false)
+    common.move(2, 3, false)
+    common.move(3, 3, true)
+    common.move(4, 3, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.move(1, 2, true)
+    common.move(4, 4, true)
+    common.move(3, 3, false)
+    common.all_boost()
+    common.move(2, 4, false)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 3
+    common.move(1, 3, true)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 2, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat()
+}
+
+
+function shanhu() {
+    // 进篝火
+    move_upward()
+    while (!common.checkStanding()) sleep(1000);
+    click(1224, 182)
+    sleep(1000)
+    click(934, 710)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 去海滩地区
+    common.click_little_map();
+    click(1552, 640)
+    while (!common.checkStanding()) sleep(1000);
+    click(1438, 432)
+    sleep(1000)
+    click(1513, 600)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 左下角骨头
+    common.click_little_map()
+    click(922, 861);
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    shanhu2();
+
+    // 右下鼻涕虫
+    common.click_little_map()
+    click(1316, 862)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    shanhu1();
+
+    // 右上角古代
+    common.click_little_map()
+    click(1299, 686)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    shanhu3();
+
+    // 左上角铠甲
+    common.click_little_map()
+    click(921, 700)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    shanhu4();
+}
+
+function tower2port() {
+    common.click_world_map()
+    common.click_map_shrink()
+    click(1460, 959)
+    sleep(1600)
+    click(1247, 524)
+    click(1247, 524)
+    sleep(1600)
+    common.click_map_shrink()
+    click(2085, 329)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+
+    // 进入旅店
+    click(1236, 323)
+    sleep(1000)
+    while (!common.checkStanding()) sleep(1000)
+    // 旅店柜台
+    click(1360, 447)
+    sleep(3500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1100)
+    // 确认宿屋，20块钱
+    click(1491, 716)
+    sleep(6000)
+    // 恢复后的确认
+    click(1236, 699)
+    sleep(1600)
+}
+
+function port2sewer() {
+    common.click_world_map()
+    click(1210, 386)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
+
+function sewer2port() {
+    common.click_world_map()
+    click(1259, 657)
+    sleep(1200)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000)
+
+    // 进入旅店
+    click(1236, 323)
+    sleep(1000)
+    while (!common.checkStanding()) sleep(1000)
+    // 旅店柜台
+    click(1360, 447)
+    sleep(3500)
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1100)
+    // 确认宿屋，20块钱
+    click(1491, 716)
+    sleep(6000)
+    // 恢复后的确认
+    click(1236, 699)
+    sleep(1600)
+}
+
+function port2tower() {
+    common.click_world_map()
+    common.click_map_shrink()
+    click(523, 331)
+    sleep(1600)
+    click(1247, 524)
+    click(1247, 524)
+    sleep(1600)
+    click(1256, 406)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
+
+// not tested yet
+function shanhu_wide() {
+    tower2port()
+    port2sewer();
+
+    // 鼻涕虫
+    common.click_little_map()
+    click(1364, 378)
+    go_or_run()
+    common.swipe_right()
+    shanhu1()
+
+
+    // 古代遗物？
+    common.click_little_map()
+    click(676, 599)
+    go_or_run()
+    common.swipe_left()
+    shanhu3()
+
+    common.click_little_map()
+    click(693, 451)
+    go_or_run()
+
+    //骨头
+    common.click_little_map()
+    click(1546, 556)
+    go_or_run()
+    common.swipe_left()
+    shanhu2()
+
+    // 铠甲
+    common.click_little_map()
+    click(1305, 587)
+    go_or_run()
+    common.swipe_left()
+    shanhu4()
+
+    sewer2port()
+    port2tower()
+}
+
+// -------------------------------------------------------
+// --------------------- 珊瑚系列 end ---------------------
+// -------------------------------------------------------
+
 function bizhi() {
     // 进篝火
     move_upward()
@@ -1864,17 +2171,14 @@ tower2flame();
 flame2tower();
 
 switch_team(-1);
-
 shayan();
 shayan_wide();
 
 switch_team(2);
-
 xishui();
 xishui_wide();
 
 switch_team(1);
-
 hebi();
 
 tower2flame();
@@ -1882,22 +2186,24 @@ flame2tower();
 
 
 switch_team(1);
-
 bingjin();
 
 tower2flame();
 flame2tower();
 
 switch_team(1);
-
 yinxue();
-// to be tested
+// to be improved
 fight_colab();
 yinxue_wide();
 
 
-switch_team(2);
+switch_team(1);
+shanhu();
+// to be tested
+shanhu_wide();
 
+switch_team(1)
 bizhi();
 
 

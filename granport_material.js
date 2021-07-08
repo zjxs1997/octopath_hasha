@@ -56,7 +56,7 @@ function town2hole() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(8500)
+    while (!common.checkStanding()) sleep(1000);
 }
 
 function playerMove(f) {
