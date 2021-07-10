@@ -2176,18 +2176,18 @@ shayan_wide();
 
 switch_team(2);
 xishui();
-xishui_wide();
+// xishui_wide();
+tower2flame();
+flame2tower();
 
 switch_team(1);
 hebi();
-
 tower2flame();
 flame2tower();
 
 
 switch_team(1);
 bingjin();
-
 tower2flame();
 flame2tower();
 
