@@ -2192,6 +2192,7 @@ function flame2titus() {
 
 function titus2flame() {
     common.click_world_map()
+    sleep(1400)
     click(1126, 939)
     // 到这里去
     click(1870, 905)
