@@ -688,32 +688,6 @@ function fight_colab() {
     while (!common.checkCombatEnd()) sleep(1000);
     end_combat();
 
-    common.click_little_map();
-    click(786, 625)
-    go_or_run();
-
-    common.click_little_map();
-    click(1559, 699)
-    go_or_run()
-
-    common.click_little_map()
-    click(1026, 849)
-    go_or_run()
-    common.swipe_left()
-
-    // fight water with yinxue
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(1, 4, false)
-    common.move(2, 4, false)
-    common.move(3, 3, false)
-    common.move(4, 3, true)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-
     common.return_to_hotel_door()
     goto_colab(2)
     common.click_little_map()
@@ -955,137 +929,6 @@ function shanhu_wide() {
 // -------------------------------------------------------
 
 
-function bizhi() {
-    // 进篝火
-    move_upward()
-    while (!common.checkStanding()) sleep(1000);
-    click(1224, 182)
-    sleep(1000)
-    click(934, 710)
-    while (!common.checkStanding()) sleep(1000);
-
-    // 去forest地区
-    click(844, 232)
-    sleep(5500)
-    click(1513, 600)
-    while (!common.checkStanding()) sleep(1000);
-
-    // 左边rat king
-    common.click_little_map()
-    click(1044, 836)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    // 有点勉强
-    {
-        // turn 1
-        common.move(1, 2, true)
-        common.move(2, 2, false)
-        common.move(3, 4, false)
-        common.move(4, 2, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-
-    // 右边药师
-    common.click_little_map()
-    click(1340, 825)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 3, false)
-        common.move(2, 3, true)
-        common.move(3, 3, true)
-        // 这里应该是想用2，collapse charge的，但是无所谓，都能干掉
-        common.move(4, 1, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-
-    // 右上角剑士
-    common.click_little_map()
-    click(1322, 642)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 2, false)
-        common.move(2, 4, false)
-        common.move(3, 3, true)
-        common.move(4, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(1, 2, true)
-        common.move(2, 4, false)
-        common.move(3, 3, false)
-        common.move(4, 4, false)
-        common.all_boost();
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-
-    // 左边 rat king
-    common.click_little_map()
-    click(1015, 642)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 2, false)
-        common.move(2, 4, false)
-        common.move(3, 3, false)
-        common.move(4, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(1, 2, true)
-        common.move(2, 4, false)
-        common.move(3, 3, false)
-        common.move(4, 3, false)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-
-    // 左边虫子
-    common.click_little_map()
-    click(866, 637)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 3, false)
-        common.all_boost()
-        common.move(3, 3, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(1, 2, true)
-        common.move(2, 2, false)
-        common.move(3, 4, false)
-        common.move(4, 2, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-}
-
 function bingjin() {
     // 进篝火
     move_upward()
@@ -1173,14 +1016,14 @@ flame2tower();
 
 switch_team(1);
 yinxue();
-// fight_colab();
-yinxue_wide();
+fight_colab();
+// yinxue_wide();
+tower2flame()
+flame2tower();
 
 
 switch_team(1);
 shanhu();
 shanhu_wide()
 
-switch_team(1);
-bizhi();
 

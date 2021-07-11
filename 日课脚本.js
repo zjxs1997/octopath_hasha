@@ -2195,12 +2195,13 @@ switch_team(1);
 yinxue();
 // to be improved
 fight_colab();
-yinxue_wide();
+// yinxue_wide();
+tower2flame()
+flame2tower()
 
 
 switch_team(1);
 shanhu();
-// to be tested
 shanhu_wide();
 
 switch_team(1)
