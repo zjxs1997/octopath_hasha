@@ -151,8 +151,6 @@ function shayan2() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(1, 4, false)
-    common.move(2, 2, false)
     common.move(3, 3, false)
     common.move(4, 2, true)
     common.all_boost();
@@ -754,9 +752,7 @@ function shanhu1() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(1, 2, false)
     common.move(2, 4, false)
-    common.move(3, 3, false)
     common.move(4, 2, false)
     common.all_boost()
     common.start_attack(1000)
@@ -777,7 +773,6 @@ function shanhu2() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(1, 4, false)
     common.move(2, 2, false)
     common.move(3, 3, true)
     common.move(4, 2, true)
@@ -945,9 +940,6 @@ function bingjin1() {
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(1, 4, false)
-    common.move(2, 4, false)
-    common.move(3, 3, false)
     common.move(4, 3, false)
     common.all_boost()
     common.start_attack(1000)
