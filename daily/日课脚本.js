@@ -44,7 +44,6 @@ coast_coordinates = [
     [890, 820],             // 海葵
     [1318, 815],            // 海胆
     [1328, 622],            // 鲸鱼
-    [1037, 449],            // 飞鱼
     [1319, 449],            // 铠甲
     [1186, 263],            // boss
     [1547, 632],
@@ -601,6 +600,7 @@ function shayan2() {
 // 魔导机兵
 function shayan3() {
     while (!common.checkCombat()) sleep(1000);
+    sleep(200)
     // turn 1
     common.move(4, 3, true)
     common.all_boost();
