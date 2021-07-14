@@ -1123,7 +1123,7 @@ fight_colab();
 // yinxue_wide();
 // tower2flame()
 // flame2tower();
-
+common.return_to_hotel_door()
 
 switch_team(1);
 shanhu();
