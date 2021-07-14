@@ -27,10 +27,9 @@ forest_coordinates = [
 
 frost_coordinates = [
     [1290, 687],            // 研究员1号
-    [1430, 681],            // 山猪
+    [1565, 690],            // 铠甲
     [1439, 534],            // 研究员2号
     [929, 376],             // 蛇鸟
-    [1425, 383],            // bear
     [1193, 239],            // boss
     [1623, 688],            // 下一个地方
 ]
@@ -44,7 +43,6 @@ coast_coordinates = [
     [890, 820],             // 海葵
     [1318, 815],            // 海胆
     [1328, 622],            // 鲸鱼
-    [1037, 449],            // 飞鱼
     [1319, 449],            // 铠甲
     [1186, 263],            // boss
     [1547, 632],
@@ -62,11 +60,14 @@ sun_coordinates = [
 
 river_coordinates = [
     [1192, 233],
+    [1060, 409],            // 飞翔虫
     [1454, 703]
 ]
 
 cliff_coordinates = [
     [1175, 292],
+    [1069, 627],            // 秃鹫
+    [1586, 794],            // 秃鹫二号
     [1624, 623]
 ]
 
@@ -468,16 +469,16 @@ function do_tower() {
             }
             move_upward();
             while (!common.checkCombat()) sleep(1000);
-            if (word_index < 4)
-                fight();
-            else if (word_index == 4)
+            if (word_index == 4)
                 fight_mountain();
             else if (word_index == 5)
                 fight_dessert();
-            else if (word_index == 6)
+            else if (word_index == 6 && cor_index == 0)
                 fight_river();
-            else if (word_index == 7)
+            else if (word_index == 7 && cor_index == 0)
                 fight_cliff();
+            else
+                fight()
         }
     }
 }
