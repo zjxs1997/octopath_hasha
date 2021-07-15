@@ -36,6 +36,7 @@ frost_coordinates = [
 
 flat_coordinates = [
     [1196, 303],            // boss
+    [1450, 624],            // bull
     [1647, 638],
 ]
 
@@ -687,12 +688,12 @@ function shayan() {
     move_upward();
     shayan2();
 
-    // 右上角魔导机兵
-    common.click_little_map()
-    click(1314, 614)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    shayan3();
+    // // 右上角魔导机兵
+    // common.click_little_map()
+    // click(1314, 614)
+    // while (!common.checkStanding()) sleep(1000);
+    // move_upward();
+    // shayan3();
 
     // 左上角魔导飞机
     common.click_little_map()
@@ -820,31 +821,31 @@ function shayan_wide() {
     swipe(674, 589, 1548, 589, 2000)
     shayan1();
 
-    // 魔导机兵
-    common.return_to_hotel_door()
+    // // 魔导机兵
+    // common.return_to_hotel_door()
 
-    common.click_little_map()
-    click(1577, 584)
-    go_or_run();
+    // common.click_little_map()
+    // click(1577, 584)
+    // go_or_run();
 
-    common.click_little_map()
-    click(1281, 615)
-    go_or_run()
+    // common.click_little_map()
+    // click(1281, 615)
+    // go_or_run()
 
-    common.click_little_map()
-    click(1524, 473)
-    go_or_run()
+    // common.click_little_map()
+    // click(1524, 473)
+    // go_or_run()
 
-    common.click_little_map()
-    click(1378, 382)
-    go_or_run()
+    // common.click_little_map()
+    // click(1378, 382)
+    // go_or_run()
 
-    common.click_little_map()
-    click(1089, 652)
-    go_or_run()
-    swipe(1548, 589, 674, 589, 2000)
+    // common.click_little_map()
+    // click(1089, 652)
+    // go_or_run()
+    // swipe(1548, 589, 674, 589, 2000)
 
-    shayan3();
+    // shayan3();
 
     // 魔导飞机
     common.return_to_hotel_door()
