@@ -688,45 +688,6 @@ function fight_colab() {
     while (!common.checkCombatEnd()) sleep(1000);
     end_combat();
 
-    common.return_to_hotel_door()
-    goto_colab(2)
-    common.click_little_map()
-    click(1474, 769)
-    go_or_run()
-    common.swipe_left()
-
-    // fight frog-2 with yinxue
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(3, 3, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-    // 暂时不想找ntr的流程问题在哪里
-    // common.click_little_map()
-    // click(1117, 920)
-    // go_or_run()
-    // common.swipe_down()
-
-    // common.click_little_map()
-    // click(807, 596)
-    // go_or_run()
-
-    // common.click_little_map()
-    // click(1576, 296)
-    // go_or_run()
-    // common.swipe_up()
-
-    // // fight ntr with yinxue
-    // while (!common.checkCombat()) sleep(1000);
-    // // turn 1
-    // common.move(3, 3, false)
-    // common.all_boost()
-    // common.start_attack(1000)
-    // while (!common.checkCombatEnd()) sleep(1000);
-    // end_combat();
 }
 
 

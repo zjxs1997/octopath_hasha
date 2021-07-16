@@ -1529,19 +1529,6 @@ function fight_colab() {
 
     common.return_to_hotel_door()
     goto_colab(2)
-    common.click_little_map()
-    click(1474, 769)
-    go_or_run()
-    common.swipe_left()
-
-    // fight frog-2 with yinxue
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(3, 3, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
 
     common.click_little_map()
     click(1117, 920)
@@ -2235,7 +2222,9 @@ flame2tower();
 
 switch_team(-1);
 shayan();
-shayan_wide();
+// shayan_wide();
+tower2flame();
+flame2tower();
 
 switch_team(2);
 xishui();
@@ -2256,7 +2245,6 @@ bingjin_wide();
 
 switch_team(1);
 yinxue();
-// to be improved
 fight_colab();
 // yinxue_wide();
 tower2flame()
