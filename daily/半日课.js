@@ -1065,8 +1065,8 @@ function bingjin_wide() {
 
 // 流程：篝火2
 
-shayan();
-shayan_wide();
+// shayan();
+// shayan_wide();
 
 // switch_team(2);
 // xishui();
@@ -1074,7 +1074,7 @@ shayan_wide();
 // tower2flame();
 // flame2tower();
 
-switch_team(4);
+// switch_team(4);
 bingjin();
 bingjin_wide();
 
