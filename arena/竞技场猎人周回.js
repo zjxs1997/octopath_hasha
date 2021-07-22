@@ -108,6 +108,7 @@ function win() {
 }
 
 function run() {
+    fail_counter++;
     click(1198, 933);
     sleep(800);
     click(1483, 693);
