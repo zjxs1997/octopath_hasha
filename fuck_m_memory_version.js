@@ -1,5 +1,24 @@
 // 开启招式记忆选项，大概可以节省一丢丢时间
 
+
+// 队伍配置
+// 1:女剑，后排特蕾莎；
+// 2:ddl，后排李杜
+// 3:泰雷兹，后排管家；
+// 4:男剑，后排女贼；
+
+// 技能配置
+// 女剑 1：剑1， 2：暗， 3：三连；  特蕾莎 1:疾风
+// ddl 2:剑岚；                  李杜 2：双乱， 3:轰
+// 泰雷兹 2:大雷；                管家 2:风；3:三连
+// 男剑 3: 二连；                 女贼 3: 二连
+
+// 饰品配置：
+// 女贼：黑龙（6）+龙2（7）
+// 特蕾莎：精灵（5）
+// 管家：龙1（6）+精灵（6）
+// 李杜：龙4（9）+龙3（8）
+
 auto();
 
 
@@ -20,7 +39,7 @@ var ken = images.read("/storage/emulated/0/checkPic/weakken.jpg")
 var yari = images.read("/storage/emulated/0/checkPic/weakyari.jpg")
 function checkMarvelName() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, marvelnmame, {
@@ -31,7 +50,7 @@ function checkMarvelName() {
 }
 function checkRandomBox() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, randombox, {
@@ -42,7 +61,7 @@ function checkRandomBox() {
 }
 function checkKen() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, ken, {
@@ -53,7 +72,7 @@ function checkKen() {
 }
 function checkYari() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, yari, {
@@ -98,7 +117,7 @@ function fuck_marvelous_pone() {
     common.all_boost();
     common.start_attack(1000)
 
-    while (!checkMarvelName())  sleep(3000);
+    while (!checkMarvelName()) sleep(3000);
     press(1250, 507, 2000);
 }
 
@@ -119,7 +138,7 @@ function handleDeath() {
         click(1483, 693);
     } else
         return false;
-    while(!common.checkCloseWin()) sleep(1000);
+    while (!common.checkCloseWin()) sleep(1000);
     click(1240, 584)
     sleep(1000)
     return true;
@@ -172,6 +191,9 @@ function fuck_marvelous_ptwo() {
 
         common.move(1, 4, false)
         // 先检查pattern
+        // pattern 1 剑风
+        // 2: 枪暗
+        // 3: 本雷
         var pattern;
         if (checkKen()) {
             toastLog("enter pattern 1，希望别翻车")
@@ -267,7 +289,7 @@ while (1) {
     // to be finished
     var result = fuck_marvelous_ptwo();
     if (result == 1) {
-        while(!checkRandomBox()) sleep(3000);
+        while (!checkRandomBox()) sleep(3000);
         click(1249, 640)
         sleep(800)
         // 关闭确认
