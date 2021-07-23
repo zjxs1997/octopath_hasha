@@ -108,7 +108,7 @@ function win() {
 }
 
 function run() {
-    fail_counter++;
+    fail_counter++
     click(1198, 933);
     sleep(800);
     click(1483, 693);
@@ -222,14 +222,14 @@ while (1) {
     common.move(4, 3, true)
     common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
-    if (handleDeath()) continue;
+    // if (handleDeath()) continue;
 
     // turn 11
     common.move(1, 3, true)
     common.move(4, 4, true)
     common.all_boost()
-    common.move(2, 4, false)
-    common.move(3, 2, false)
+    //common.move(2, 4, false)
+    //common.move(3, 2, false)
     common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
 
@@ -244,6 +244,7 @@ while (1) {
         win();
     } else {
         // turn 13
+        common.move(1, 3, true)
         common.all_boost();
         common.start_attack(1000)
         var res2 = checker();
