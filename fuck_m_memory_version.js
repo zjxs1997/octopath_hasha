@@ -10,14 +10,15 @@
 // 技能配置
 // 女剑 1：剑1， 2：暗， 3：三连；  特蕾莎 1:疾风
 // ddl 2:剑岚；                  李杜 2：双乱， 3:轰
-// 泰雷兹 2:大雷；                管家 2:风；3:三连
+// 艾维斯 3:大雷；                管家 2:风；3:三连
 // 男剑 3: 二连；                 女贼 3: 二连
 
 // 饰品配置：
-// 女贼：黑龙（6）+龙2（7）
+// 女剑：龙5（10）+ 联动速度甲
 // 特蕾莎：精灵（5）
-// 管家：龙1（6）+精灵（6）
 // 李杜：龙4（9）+龙3（8）
+// 管家：龙1（6）+精灵（6）
+// 女贼：黑龙（6）+龙2（7）
 
 auto();
 
@@ -164,7 +165,7 @@ function fuck_marvelous_ptwo() {
     while (!common.checkArenaCombat()) sleep(1000);
 
     // turn 3
-    common.move(3, 3, true)
+    common.move(3, 4, true)
     common.all_boost();
     common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
@@ -208,12 +209,11 @@ function fuck_marvelous_ptwo() {
         // turn iter2
         switch (pattern) {
             case 1:
-                common.move(1, 2, true)
+                common.move(1, 4, true)
                 break;
             case 2:
                 common.move(1, 2, false)
                 common.all_boost()
-                common.move(3, 4, false)
                 common.move(2, 1, true)
                 common.move(4, 1, true)
                 break;
@@ -221,8 +221,6 @@ function fuck_marvelous_ptwo() {
                 common.move(2, 4, false)
                 common.all_boost();
                 common.move(1, 1, true)
-                common.move(3, 4, false)
-                common.move(4, 4, false)
                 break;
         }
         common.start_attack(1000)
@@ -239,6 +237,7 @@ function fuck_marvelous_ptwo() {
         // turn iter 3
         switch (pattern) {
             case 1:
+                common.move(1, 2, false)
                 common.move(2, 3, true)
                 common.move(4, 4, true)
                 common.all_boost();
@@ -252,7 +251,7 @@ function fuck_marvelous_ptwo() {
                 common.move(4, 1, false)
                 break;
             case 3:
-                common.move(3, 3, true)
+                common.move(3, 4, true)
                 common.all_boost()
                 common.move(1, 1, false)
                 common.move(2, 1, true)
