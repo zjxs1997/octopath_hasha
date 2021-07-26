@@ -1,4 +1,4 @@
-
+// 无印版本，平平无奇
 
 auto();
 
@@ -20,7 +20,7 @@ var ken = images.read("/storage/emulated/0/checkPic/weakken.jpg")
 var yari = images.read("/storage/emulated/0/checkPic/weakyari.jpg")
 function checkMarvelName() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, marvelnmame, {
@@ -31,7 +31,7 @@ function checkMarvelName() {
 }
 function checkRandomBox() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, randombox, {
@@ -42,7 +42,7 @@ function checkRandomBox() {
 }
 function checkKen() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, ken, {
@@ -53,7 +53,7 @@ function checkKen() {
 }
 function checkYari() {
     var img = null;
-    while(!img) {
+    while (!img) {
         img = captureScreen();
     }
     var key = findImage(img, yari, {
@@ -112,7 +112,7 @@ function fuck_marvelous_pone() {
     common.all_boost();
     common.start_attack(1000)
 
-    while (!checkMarvelName())  sleep(3000);
+    while (!checkMarvelName()) sleep(3000);
     press(1250, 507, 2000);
 }
 
@@ -133,7 +133,7 @@ function handleDeath() {
         click(1483, 693);
     } else
         return false;
-    while(!common.checkCloseWin()) sleep(1000);
+    while (!common.checkCloseWin()) sleep(1000);
     click(1240, 584)
     sleep(1000)
     return true;
@@ -291,7 +291,7 @@ while (1) {
     // to be finished
     var result = fuck_marvelous_ptwo();
     if (result == 1) {
-        while(!checkRandomBox()) sleep(3000);
+        while (!checkRandomBox()) sleep(3000);
         click(1249, 640)
         sleep(800)
         // 关闭确认
