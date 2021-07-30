@@ -2052,68 +2052,6 @@ function bingjin() {
     move_upward();
     bingjin2();
 
-    // 右边的熊
-    common.click_little_map()
-    click(1416, 697)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 4, false)
-        common.move(2, 3, true)
-        common.move(3, 3, true)
-        common.move(4, 2, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(2, 2, false)
-        common.all_boost()
-        common.move(3, 4, false)
-        common.move(4, 2, true)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 3
-        common.move(1, 4, true)
-        common.move(2, 3, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
-
-    // 左边的马
-    common.click_little_map()
-    click(932, 695)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    {
-        // turn 1
-        common.move(1, 4, false)
-        common.move(2, 4, true)
-        common.move(3, 3, false)
-        common.move(4, 3, true)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 2
-        common.move(4, 3, true)
-        common.all_boost()
-        common.move(1, 4, false)
-        common.start_attack(1000)
-        while (!common.checkCombat()) sleep(1000);
-
-        // turn 3
-        common.move(1, 2, false)
-        common.move(2, 3, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-    }
 }
 
 function flame2titus() {
