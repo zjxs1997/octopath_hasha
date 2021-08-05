@@ -159,14 +159,14 @@ function fight_colab() {
     go_or_run();
     common.swipe_up()
 
-    // fight frog with yinxue
+    // fight frog with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.all_switch()
-    common.move(1, 3, false)
-    common.move(2, 2, false)
-    common.move(3, 3, false)
-    common.move(4, 2, false)
+    common.move(1, 2, true)
+    common.move(2, 2, true)
+    common.move(3, 2, false)
+    common.move(4, 4, false)
     common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
@@ -359,7 +359,7 @@ function bingjin_wide() {
 bingjin();
 bingjin_wide();
 
-switch_team(1);
+switch_team(-2);
 fight_colab();
 
 

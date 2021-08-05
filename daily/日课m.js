@@ -916,14 +916,14 @@ function fight_colab() {
     go_or_run();
     common.swipe_up()
 
-    // fight frog with yinxue
+    // fight frog with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.all_switch()
-    common.move(1, 3, false)
-    common.move(2, 2, false)
-    common.move(3, 3, false)
-    common.move(4, 2, false)
+    common.move(1, 2, true)
+    common.move(2, 2, true)
+    common.move(3, 2, false)
+    common.move(4, 4, false)
     common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
@@ -942,13 +942,13 @@ function fight_colab() {
     go_or_run()
     common.swipe_left()
 
-    // fight water with yinxue
+    // fight water with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
     common.move(1, 4, false)
     common.move(2, 4, false)
-    common.move(3, 3, false)
-    common.move(4, 3, true)
+    // common.move(3, 3, false)
+    common.move(4, 4, false)
     common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
@@ -973,10 +973,11 @@ function fight_colab() {
     go_or_run()
     common.swipe_up()
 
-    // fight ntr with yinxue
+    // fight ntr with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
-    common.move(3, 3, false)
+    common.move(1, 2, false)
+    common.move(4, 4, false)
     common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
@@ -1467,17 +1468,14 @@ shayan();
 tower2flame();
 flame2tower();
 
-switch_team(4);
-bingjin();
-bingjin_wide();
-
-
-switch_team(1);
-// yinxue();
+switch_team(2)
 fight_colab();
-// yinxue_wide();
 tower2flame()
 flame2tower()
+
+switch_team(2);
+bingjin();
+bingjin_wide();
 
 
 switch_team(1);
