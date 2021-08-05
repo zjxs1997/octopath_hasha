@@ -1482,7 +1482,7 @@ flame2tower()
 
 switch_team(1);
 shanhu();
-shanhu_wide();
+// shanhu_wide();
 
 
 
