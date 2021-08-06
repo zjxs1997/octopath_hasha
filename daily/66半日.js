@@ -1,4 +1,4 @@
-// 开局需要是66boss的队伍
+// 开局66队伍
 
 auto();
 
@@ -159,100 +159,6 @@ function relic2flame() {
 }
 
 
-// fight boss
-function fight_tiger() {
-    // 进入篝火
-    move_upward()
-    while (!common.checkStanding()) sleep(1000);
-    click(1224, 182)
-    sleep(1000)
-    click(934, 710)
-    while (!common.checkStanding()) sleep(1000);
-
-    // 去frost地区
-    click(1619, 225)
-    sleep(5500)
-    click(1513, 600)
-    while (!common.checkStanding()) sleep(1000);
-
-
-    common.click_little_map()
-    click(1192, 245)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-    sleep(1000);
-
-    // fight start
-    // turn 1
-    common.move(4, 2, false)
-    common.all_boost()
-    common.move(1, 3, false)
-    common.move(2, 2, false)
-    common.move(3, 2, false)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 2
-    common.move(4, 1, true)
-    common.all_boost()
-    common.move(1, 3, false)
-    common.move(2, 2, false)
-    common.move(3, 2, false)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 3
-    common.move(4, 3, true)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 4
-    common.move(4, 1, true)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 5
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-
-    end_combat()
-}
-
-
-function fight_elephant() {
-    // 进入篝火
-    move_upward()
-    while (!common.checkStanding()) sleep(1000);
-    click(1224, 182)
-    sleep(1000)
-    click(934, 710)
-    while (!common.checkStanding()) sleep(1000);
-
-    // 去flat地区
-    common.click_little_map()
-    click(1530, 441)
-    while (!common.checkStanding()) sleep(1000);
-    click(1412, 426)
-    sleep(1000)
-    click(1513, 600)
-    while (!common.checkStanding()) sleep(1000);
-
-    common.click_little_map()
-    click(1170, 255)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    while (!common.checkCombat()) sleep(1000);
-
-    // fight start
-
-}
-
-
-
-
 // 蜥蜴人
 function fight_66_1() {
     while (!common.checkCombat()) sleep(1000);
@@ -271,35 +177,6 @@ function fight_66_1() {
     end_combat();
 }
 
-// 魔导机兵
-function fight_66_2() {
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 1
-    common.all_boost()
-    common.move(1, 2, false)
-    common.move(3, 4, true)
-    common.move(4, 2, true)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-
-    // turn 2
-    common.move(2, 4, false)
-    common.move(4, 4, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-
-    // turn 3
-    common.move(4, 4, true)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-}
 
 // 青蛙
 function fight_66_3() {
@@ -322,38 +199,6 @@ function fight_66_3() {
     end_combat();
 
 }
-
-function fight_66_4() {
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 1
-    common.all_boost()
-    common.move(1, 3, false)
-    common.move(3, 4, false)
-    common.move(4, 2, true)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-
-    // turn 2
-    common.move(2, 3, true)
-    common.move(4, 4, true)
-    common.start_attack(1000)
-
-    while (!common.checkCombat()) sleep(1000);
-
-
-    // turn 3
-    common.move(2, 2, false)
-    common.move(3, 2, false)
-    common.all_boost()
-    common.start_attack(1000)
-
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-}
-
 
 
 function fight_66_tower() {
@@ -380,14 +225,6 @@ function fight_66_tower() {
     fight_66_1()
 
 
-    // 魔导机兵
-    common.click_little_map()
-    click(1273, 380)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    fight_66_2()
-
-
     // 去右边flatland
     common.click_little_map()
     click(1477, 681)
@@ -405,14 +242,6 @@ function fight_66_tower() {
     while (!common.checkStanding()) sleep(1000);
     move_upward();
     fight_66_3()
-
-
-    // 双头蛇
-    common.click_little_map()
-    click(1325, 432)
-    while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    fight_66_4()
 }
 
 
@@ -427,13 +256,6 @@ function fight_66_wide() {
     common.swipe_left()
     fight_66_1()
 
-    common.click_little_map()
-    click(973, 589)
-    go_or_run()
-    common.swipe_left()
-    fight_66_2()
-
-
     origin2relic()
 
     common.click_little_map()
@@ -442,12 +264,6 @@ function fight_66_wide() {
     common.swipe_left()
     fight_66_3()
 
-    common.click_little_map()
-    click(1454, 657)
-    go_or_run()
-    common.swipe_left()
-    fight_66_4()
-
     relic2flame()
     flame2tower()
 }
@@ -455,12 +271,6 @@ function fight_66_wide() {
 
 
 // main
-
-fight_tiger()
-switch_team(-1)
-tower2flame()
-flame2tower()
-
 
 fight_66_tower()
 fight_66_wide()
