@@ -32,7 +32,6 @@ frost_coordinates = [
 
 flat_coordinates = [
     [1196, 303],            // boss
-    [1450, 624],            // bull
     [1647, 638],
 ]
 
@@ -62,8 +61,6 @@ river_coordinates = [
 
 cliff_coordinates = [
     [1175, 292],
-    [1069, 627],            // 秃鹫
-    [1586, 794],            // 秃鹫二号
     [1624, 623]
 ]
 
@@ -919,7 +916,6 @@ function fight_colab() {
     // fight frog with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
-    common.all_switch()
     common.move(1, 2, true)
     common.move(2, 2, true)
     common.move(3, 2, false)
@@ -1478,7 +1474,7 @@ bingjin();
 bingjin_wide();
 
 
-switch_team(1);
+switch_team(2);
 shanhu();
 // shanhu_wide();
 
