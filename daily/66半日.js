@@ -200,7 +200,6 @@ function fight_66_3() {
 
 }
 
-
 function fight_66_tower() {
 
     // 进入篝火
@@ -243,8 +242,6 @@ function fight_66_tower() {
     move_upward();
     fight_66_3()
 }
-
-
 
 function fight_66_wide() {
     tower2flame()
