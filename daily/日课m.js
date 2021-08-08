@@ -1080,6 +1080,18 @@ function relic2flame() {
     sleep(1600)
 }
 
+function flame2origin() {
+    common.click_world_map()
+    click(1322, 377)
+    sleep(1400)
+    // 到这里去
+    click(1870, 905)
+    sleep(1300)
+    // fast travel的确认
+    click(1432, 695)
+    while (!common.checkStanding()) sleep(1000);
+}
+
 // 蜥蜴人
 function fight_66_1() {
     while (!common.checkCombat()) sleep(1000);
