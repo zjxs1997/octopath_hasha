@@ -162,7 +162,6 @@ function fight_colab() {
     // fight frog with 66
     while (!common.checkCombat()) sleep(1000);
     // turn 1
-    common.all_switch()
     common.move(1, 2, true)
     common.move(2, 2, true)
     common.move(3, 2, false)
