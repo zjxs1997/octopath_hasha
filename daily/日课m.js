@@ -1092,6 +1092,38 @@ function flame2origin() {
     while (!common.checkStanding()) sleep(1000);
 }
 
+
+function fight_66_cat() {
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 1
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+
+    // turn 2
+    common.all_switch()
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+
+    // turn 3
+    common.all_switch()
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 4
+    common.all_switch()
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+
+}
+
 // 蜥蜴人
 function fight_66_1() {
     while (!common.checkCombat()) sleep(1000);
@@ -1223,6 +1255,14 @@ function fight_66_tower() {
     while (!common.checkStanding()) sleep(1000);
     move_upward();
     fight_66_2()
+
+    猫
+    common.click_little_map()
+    click(938, 543)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward();
+    fight_66_cat()
+
 
 
     // 去右边flatland
