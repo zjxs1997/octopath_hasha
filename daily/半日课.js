@@ -516,6 +516,8 @@ fight_66_wide()
 fight_colab();
 switch_team(2);
 
+common.return_to_hotel_door()
+
 bingjin();
 bingjin_wide();
 
