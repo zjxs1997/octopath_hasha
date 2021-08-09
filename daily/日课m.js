@@ -1256,7 +1256,7 @@ function fight_66_tower() {
     move_upward();
     fight_66_2()
 
-    猫
+    // 猫
     common.click_little_map()
     click(938, 543)
     while (!common.checkStanding()) sleep(1000);
