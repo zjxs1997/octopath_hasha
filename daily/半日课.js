@@ -514,12 +514,12 @@ function bingjin_wide() {
 fight_66_tower()
 fight_66_wide()
 fight_colab();
-switch_team(2);
+// switch_team(2);
 
-common.return_to_hotel_door()
+// common.return_to_hotel_door()
 
-bingjin();
-bingjin_wide();
+// bingjin();
+// bingjin_wide();
 
 
 

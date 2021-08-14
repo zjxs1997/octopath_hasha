@@ -18,7 +18,6 @@ var common = require("lib.js");
 
 
 forest_coordinates = [
-    [1320, 613],        // deer
     [918, 453],         // 盾斗士
     [1173, 308],        // boss
     [1632, 616],        // 下一个地方
@@ -1826,13 +1825,13 @@ fight_tiger()
 tower2flame()
 flame2tower()
 
-// 63
-switch_team(1);
-bingjin();
-bingjin_wide();
+// // 63
+// switch_team(1);
+// bingjin();
+// bingjin_wide();
 
 // 65
-switch_team(2);
+switch_team(3);
 shanhu();
 // shanhu_wide();
 
