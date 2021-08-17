@@ -18,13 +18,11 @@ var common = require("lib.js");
 
 
 forest_coordinates = [
-    [918, 453],         // 盾斗士
     [1173, 308],        // boss
     [1632, 616],        // 下一个地方
 ]
 
 frost_coordinates = [
-    [929, 376],             // 蛇鸟
     [1193, 239],            // boss
     [1623, 688],            // 下一个地方
 ]
@@ -36,7 +34,6 @@ flat_coordinates = [
 
 coast_coordinates = [
     [890, 820],             // 海葵
-    [1318, 815],            // 海胆
     [1328, 622],            // 鲸
     [1186, 263],            // boss
     [1547, 632],
