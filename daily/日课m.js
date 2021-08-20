@@ -898,56 +898,6 @@ function goto_colab(floor) {
 
 function fight_colab() {
     common.return_to_hotel_door()
-    goto_colab(3)
-
-    common.click_little_map()
-    click(744, 841)
-    go_or_run();
-
-    common.click_little_map()
-    click(758, 175)
-    go_or_run();
-    common.swipe_up()
-
-    // fight frog with 66
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(1, 2, true)
-    common.move(2, 2, true)
-    common.move(3, 2, false)
-    common.move(4, 4, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-    common.click_little_map();
-    click(786, 625)
-    go_or_run();
-
-    common.click_little_map();
-    click(1559, 699)
-    go_or_run()
-
-    common.click_little_map()
-    click(1026, 849)
-    go_or_run()
-    common.swipe_left()
-
-    // fight water with 66
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(1, 4, false)
-    common.move(2, 4, false)
-    // common.move(3, 3, false)
-    common.move(4, 4, false)
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-    end_combat();
-
-
-    common.return_to_hotel_door()
     goto_colab(2)
 
     common.click_little_map()
