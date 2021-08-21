@@ -33,8 +33,6 @@ flat_coordinates = [
 ]
 
 coast_coordinates = [
-    [890, 820],             // 海葵
-    [1328, 622],            // 鲸
     [1186, 263],            // boss
     [1547, 632],
 ]
@@ -51,13 +49,12 @@ sun_coordinates = [
 
 river_coordinates = [
     [1192, 233],
-    [1060, 409],            // 飞翔虫
     [1454, 703]
 ]
 
 cliff_coordinates = [
     [1175, 292],
-    [1624, 623]
+    [1175, 292]
 ]
 
 all_coordinates = [
@@ -1772,7 +1769,7 @@ fight_tiger()
 tower2flame()
 flame2tower()
 
-// // 63
+// 63
 // switch_team(1);
 // bingjin();
 // bingjin_wide();
