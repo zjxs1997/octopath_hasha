@@ -159,7 +159,7 @@ while (1) {
                     fightLittleCat_v3();
                 }
                 var money = 10 * catBattle + 5 * littleCatBattle;
-                money = money * 1.548;
+                money = money * 1.534;
                 log('' + totalBattle + '次战斗，' + catBattle + '次猫，' + littleCatBattle + '次小猫，金钱' + money);
             } else {
                 click(1191, 939)
