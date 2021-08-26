@@ -1772,10 +1772,10 @@ tower2flame()
 flame2tower()
 
 // 66 boss
-switch_team(1);
-fight_tiger()
-tower2flame()
-flame2tower()
+// switch_team(1);
+// fight_tiger()
+// tower2flame()
+// flame2tower()
 
 // 63
 // switch_team(1);
@@ -1783,7 +1783,7 @@ flame2tower()
 // bingjin_wide();
 
 // 65
-switch_team(3);
+switch_team(4);
 shanhu();
 // shanhu_wide();
 
