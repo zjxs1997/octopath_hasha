@@ -597,20 +597,18 @@ function shayan3() {
     common.move(4, 3, true)
     common.all_boost();
     common.move(1, 2, true)
-    common.move(2, 4, true)
+    common.move(2, 3, true)
     common.move(3, 4, false)
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(2, 3, false)
     common.move(4, 4, true)
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 3
     common.move(1, 3, false)
-    common.move(2, 2, false)
     common.move(3, 2, false)
     common.all_boost();
     common.start_attack(1000)
