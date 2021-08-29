@@ -1370,13 +1370,6 @@ function shanhu4() {
     common.all_boost()
     common.move(2, 4, false)
     common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 3
-    common.move(1, 3, true)
-    common.move(4, 2, true)
-    common.all_boost()
-    common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
     end_combat()
 }
