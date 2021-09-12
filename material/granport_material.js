@@ -1,9 +1,6 @@
 // 新地图刷素材脚本
 
 // 开局需要在granport的下水道
-// 角色：3号位泰雷兹，3号技能全雷
-// 1号位劳拉，2号位火舞，2号技能群火
-// 只需要这三个角色，劳拉带个加遇敌概率的饰品
 
 var battle_times = 0;
 
@@ -75,7 +72,7 @@ var flag = true;
 var i = 0;
 
 while (1) {
-    if (battle_times >= 10) {
+    if (battle_times >= 12) {
         // 重置各种状态
         common.click_little_map()
         click(2085, 59)
@@ -92,7 +89,7 @@ while (1) {
     }
 
     i = 0;
-    while (i < 10 && battle_times < 10) {
+    while (i < 10 && battle_times < 12) {
         sleep(2500)
         if (common.checkCombat()) {
             sleep(500)
@@ -106,8 +103,7 @@ while (1) {
             total_battle_times++;
 
             common.all_switch()
-            common.move(1, 3, false)
-            common.move(2, 4, false)
+            common.move(1, 4, false)
             common.all_boost();
             click(2020, 929)
             sleep(1000)
@@ -128,7 +124,7 @@ while (1) {
 
             log("战斗了" + total_battle_times + '次')
 
-            if (battle_times >= 10)
+            if (battle_times >= 12)
                 break;
 
         } else {
