@@ -53,7 +53,7 @@ functions.checkStanding = function () {
         img = captureScreen();
     }
     var key = findImage(img, halt, {
-        region: [haltX, haltY, 50, 50]
+        //  region: [haltX, haltY, 50, 50]
     })
     img.recycle();
     if (key)
@@ -195,11 +195,11 @@ functions.move = function (person, skill, do_switch) {
             click(2041, 721)
             break;
     }
-    sleep(1000)
+    sleep(800)
 
     if (do_switch) {
-        click(1545, 873)
-        sleep(1000)
+        click(2016, 931)
+        sleep(800)
     }
 
     switch (skill) {
@@ -215,8 +215,11 @@ functions.move = function (person, skill, do_switch) {
         case 4:
             click(1502, 760)
             break;
+        case 5:
+            click(1545, 873)
+            break;
     }
-    sleep(1000)
+    sleep(800)
 }
 
 functions.swipe_left = function () {
@@ -361,7 +364,7 @@ functions.click_little_map = function () {
 
 functions.click_world_map = function () {
     // 大陆地图菜单
-    click(1151, 896)
+    click(1338, 910)
     sleep(1800)
 }
 functions.click_map_shrink = function () {

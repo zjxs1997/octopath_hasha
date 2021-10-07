@@ -55,7 +55,9 @@ river_coordinates = [
 
 cliff_coordinates = [
     [1175, 292],
-    [1175, 292]
+    [1597, 623],
+    [900, 605],
+    [900, 605]
 ]
 
 all_coordinates = [
@@ -1220,17 +1222,6 @@ function fight_67_tower() {
 }
 
 
-// 流程：篝火2
-// 先回复一个
-tower2flame();
-flame2tower();
-
-// 67
-switch_team(2);
-fight_67_tower();
-tower2flame();
-flame2tower();
-
 
 
 // ------------------------------------------------
@@ -1281,10 +1272,6 @@ flame2town();
 common.click_little_map()
 click(1387, 467)
 while (!common.checkStanding()) sleep(1000);
-
-
-// 流程：完了，震动提示
-device.vibrate(1000)
 
 
 

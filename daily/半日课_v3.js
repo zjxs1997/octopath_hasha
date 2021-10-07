@@ -112,111 +112,99 @@ function flame2tower() {
 
 
 
+
+
 // -------------------------------------------------------
-// ----------------------- 砂岩系列 -----------------------
+// --------------------- 68系列  ---------------------
 // -------------------------------------------------------
 
-// 暴徒
-function shayan1() {
+
+function fight_68_1() {
     while (!common.checkCombat()) sleep(1000);
+
     // turn 1
-    common.move(2, 1, true)
-    common.all_boost();
-    common.move(3, 4, false)
+    common.move(1, 3, true)
+    common.move(2, 4, false)
+    common.move(3, 3, false)
+    common.move(4, 2, false)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+
+function fight_68_2() {
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 1
+    common.move(1, 3, false)
+    common.move(2, 2, false)
+    common.move(3, 2, true)
     common.move(4, 2, false)
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
-    common.move(3, 3, true)
-    common.move(4, 2, true)
-    common.all_boost();
+    common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
-
     end_combat();
 }
 
-// 魔导机
-function shayan2() {
+function fight_68_3() {
     while (!common.checkCombat()) sleep(1000);
+
     // turn 1
-    common.move(1, 4, false)
+    common.move(1, 3, true)
+    common.move(2, 3, false)
+    common.move(3, 2, true)
+    common.move(4, 3, true)
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2，要挨打
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+
+function fight_68_4() {
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 1
+    common.move(1, 3, false)
+    common.move(2, 3, true)
+    common.move(3, 2, true)
+    common.move(4, 3, true)
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombatEnd()) sleep(1000);
+    end_combat();
+}
+
+function fight_68_5() {
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 1
+    common.move(1, 3, false)
     common.move(2, 2, false)
-    common.move(3, 4, true)
-    common.move(4, 2, false)
+    common.move(3, 4, false)
+    common.move(4, 4, false)
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
     common.move(3, 3, false)
-    common.move(4, 2, true)
-    common.all_boost();
+    common.move(4, 2, false)
+    common.all_boost()
     common.start_attack(1000)
     while (!common.checkCombatEnd()) sleep(1000);
-
     end_combat();
 }
 
-// 魔导机兵
-function shayan3() {
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(4, 3, true)
-    common.all_boost();
-    common.move(1, 2, true)
-    common.move(2, 3, true)
-    common.move(3, 4, false)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 2
-    common.move(4, 4, true)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 3
-    common.move(1, 3, false)
-    common.move(3, 2, false)
-    common.all_boost();
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-
-    end_combat()
-}
-
-// 魔导飞机
-function shayan4() {
-    while (!common.checkCombat()) sleep(1000);
-    // turn 1
-    common.move(1, 4, false)
-    common.move(2, 2, false)
-    common.move(3, 4, false)
-    common.move(4, 2, false)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 2
-    common.move(4, 3, false)
-    common.all_boost()
-    common.move(1, 3, false)
-    common.move(2, 2, false)
-    common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 3
-    common.move(3, 3, true)
-    common.move(4, 2, true)
-    common.all_boost();
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
-
-    end_combat()
-}
-
-// 这个在测试的时候shayan3不知道出了什么问题，技能没点对。。。
-function shayan() {
-    // 进篝火
+function fight_68_tower() {
+    // 进入篝火
     move_upward()
     while (!common.checkStanding()) sleep(1000);
     click(1224, 182)
@@ -233,41 +221,45 @@ function shayan() {
     click(1513, 600)
     while (!common.checkStanding()) sleep(1000);
 
-    // 左下角暴徒
+    // 屎壳郎
     common.click_little_map()
-    click(903, 785);
+    click(1581, 778)
     while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    shayan1();
+    move_upward()
+    fight_68_1()
 
-    // 右下角魔导机
+    // 孔雀
     common.click_little_map()
-    click(1306, 774)
+    click(775, 616)
     while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    shayan2();
+    move_upward()
+    fight_68_2()
 
-    // // 右上角魔导机兵
-    // common.click_little_map()
-    // click(1314, 614)
-    // while (!common.checkStanding()) sleep(1000);
-    // move_upward();
-    // shayan3();
-
-    // 左上角魔导飞机
+    //
     common.click_little_map()
-    click(916, 621)
+    click(1585, 615)
     while (!common.checkStanding()) sleep(1000);
-    move_upward();
-    shayan4()
+    move_upward()
+    fight_68_3()
 
+
+    common.click_little_map()
+    click(1050, 446)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward()
+    fight_68_4()
+
+
+    common.click_little_map()
+    click(921, 452)
+    while (!common.checkStanding()) sleep(1000);
+    move_upward()
+    fight_68_5()
 }
 
 
-
-
 // -------------------------------------------------------
-// --------------------- 砂岩系列 end ---------------------
+// --------------------- 68系列 end ---------------------
 // -------------------------------------------------------
 
 
@@ -802,8 +794,14 @@ function fight_67_tower() {
 // start
 // ------------------------
 
+// 68
+fight_68_tower()
+tower2flame();
+flame2tower();
+
+
 // 67
-switch_team(2);
+switch_team(1);
 fight_67_tower();
 tower2flame();
 flame2tower();
@@ -823,11 +821,3 @@ switch_team(1);
 shanhu();
 tower2flame()
 flame2tower()
-
-// 64
-switch_team(2);
-shayan();
-tower2flame()
-flame2tower()
-
-
