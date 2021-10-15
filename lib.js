@@ -53,7 +53,7 @@ functions.checkStanding = function () {
         img = captureScreen();
     }
     var key = findImage(img, halt, {
-        //  region: [haltX, haltY, 50, 50]
+        region: [haltX, haltY, 100, 100]
     })
     img.recycle();
     if (key)
@@ -203,6 +203,11 @@ functions.move = function (person, skill, do_switch) {
     }
 
     switch (skill) {
+        case 0:
+            click(1435, 135)
+            sleep(800)
+            click(1751, 531)
+            break;
         case 1:
             click(1609, 284)
             break;

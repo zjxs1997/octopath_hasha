@@ -71,6 +71,14 @@ var total_battle_times = 0;
 var flag = true;
 var i = 0;
 
+function checker() {
+    while (1) {
+        if (common.checkCombat()) return 1;
+        if (common.checkCombatEnd()) return 0;
+        sleep(1000)
+    }
+}
+
 while (1) {
     if (battle_times >= 12) {
         // 重置各种状态
@@ -97,32 +105,27 @@ while (1) {
             total_battle_times++;
             sleep(2000)
 
-            if (common.checkCat()) {
-                log("草，怎么是猫")
-                // 逃跑
-                click(1211, 957)
-                sleep(6000)
-                continue;
-            }
-
             common.move(1, 4, false)
             common.all_boost();
             click(2020, 929)
             sleep(1000)
 
-            while (!common.checkCombatEnd()) {
-                sleep(1000)
+            var res = checker()
+            if (res == 1) {
+                log('尼玛，是猫')
+                click(1211, 957)
+                sleep(6000)
+            } else {
+                // 瞎鸡儿点
+                click(1463, 751)
+                sleep(2100)
+                // 瞎鸡儿点
+                click(1463, 751)
+                sleep(3100)
+                // 瞎鸡儿点
+                click(1463, 751)
+                sleep(5600)
             }
-
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(2100)
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(3100)
-            // 瞎鸡儿点
-            click(1463, 751)
-            sleep(5600)
 
             log("战斗了" + total_battle_times + '次')
 
