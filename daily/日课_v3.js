@@ -55,9 +55,7 @@ river_coordinates = [
 
 cliff_coordinates = [
     [1175, 292],
-    [1597, 623],
-    [900, 605],
-    [900, 605]
+    [1175, 292]
 ]
 
 all_coordinates = [
@@ -187,11 +185,11 @@ function shit_garden() {
     click(864, 311)
     while (!common.checkStanding()) sleep(1000);
     click(1413, 475)
-    sleep(800)
+    sleep(1000)
     click(1266, 637)
     sleep(800)
     click(1659, 499)
-    sleep(1300)
+    sleep(1500)
     click(1266, 637)
     sleep(800)
 }
@@ -388,17 +386,6 @@ function fight() {
 }
 //  to be tested
 function fight_mountain(cor_index) {
-    if (cor_index == 0) {
-        // grape thief
-        common.move(1, 3, true)
-        common.move(2, 2, false)
-        common.move(3, 3, true)
-        common.all_boost()
-        common.start_attack(1000)
-        while (!common.checkCombatEnd()) sleep(1000);
-        end_combat();
-        return;
-    }
 
     // boss
     common.move(1, 2, false)
