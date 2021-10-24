@@ -179,6 +179,79 @@ functions.checkBackDeath = function () {
 // 操作类函数
 // --------------------------------------------------------
 
+// 点选技能-改进版
+// move_index从0开始编码，-1表示必杀
+// 必须提供前两个参数
+// boost_level取值：234
+functions.fight = function (pearson_index, move_index, do_switch, boost_level, target) {
+    // 1.使用者
+    switch (pearson_index) {
+        case 1:
+            click(2041, 126)
+            break;
+        case 2:
+            click(2041, 311)
+            break;
+        case 3:
+            click(2041, 531)
+            break;
+        case 4:
+            click(2041, 721)
+            break;
+    }
+    sleep(800)
+
+    // 2. 是否切换
+    if (do_switch) {
+        click(2016, 931)
+        sleep(800)
+    }
+
+    // 3.1 必杀
+    if (move_index == -1) {
+        click(1435, 135)
+        sleep(800)
+        click(1751, 531)
+        sleep(800)
+    } else {
+        // 3.2 技能纵坐标
+        var zong = [284, 409, 575, 760, 873][move_index];
+
+        // 4 boost的横坐标位置 & 出招
+        var heng_start = 1784;
+        var heng_end, swipe_time;
+        if (boost_level) {
+            heng_end = [-1, -1, 1870, 2037, 2130][boost_level];
+            swipe_time = [-1, -1, 1000, 1500, 2000][boost_level];
+            swipe(heng_start, zong, heng_end, zong, swipe_time);
+        } else {
+            click(heng_start, zong);
+        }
+        sleep(800);
+    }
+
+    // 5 目标角色
+    if (target) {
+        switch (target) {
+            case 1:
+                click(2041, 126)
+                break;
+            case 2:
+                click(2041, 311)
+                break;
+            case 3:
+                click(2041, 531)
+                break;
+            case 4:
+                click(2041, 721)
+                break;
+        }
+        sleep(800)
+    }
+
+
+}
+
 // 点选技能
 functions.move = function (person, skill, do_switch) {
     switch (person) {
