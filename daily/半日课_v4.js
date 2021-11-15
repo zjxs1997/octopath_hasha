@@ -354,12 +354,13 @@ function fight_colab() {
     common.move(2, 4, false)
     common.move(3, 4, true)
     common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
-
-    // turn 9
-    common.all_boost()
-    common.start_attack(1000)
-    while (!common.checkCombatEnd()) sleep(1000);
+    var res = checker();
+    if (res == 1) {
+        // turn 9
+        common.all_boost()
+        common.start_attack(1000)
+        while (!common.checkCombatEnd()) sleep(1000);
+    }
     end_combat();
 }
 
