@@ -312,7 +312,7 @@ function fight_colab() {
 
     // turn 3
     common.move(3, 4, true)
-    common.move(4, 4, true)
+    common.move(4, 0, true)
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
@@ -348,7 +348,11 @@ function fight_colab() {
     common.all_boost()
     common.move(4, 5, true)
     common.start_attack(1000)
-    while (!common.checkCombat()) sleep(1000);
+    var res = checker();
+    if (res == 2) {
+        end_combat();
+        return;
+    }
 
     // turn 8
     common.move(2, 4, false)
