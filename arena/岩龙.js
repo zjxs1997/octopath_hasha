@@ -31,48 +31,14 @@ function handleDeath() {
     return true;
 }
 
-// 估计用不着
-function regener(do_switch) {
-    click(2041, 126)
-    sleep(1000)
-    if (do_switch) {
-        click(1545, 873)
-        sleep(1000)
-    }
-    swipe(1604, 407, 2167, 407, 1500)
-    sleep(200)
-    click(1150, 580)
-}
-
-// 同样
-function move333() {
-    click(2041, 531)
-    sleep(1000)
-    swipe(1665, 608, 2022, 608, 1500)
-    sleep(200)
-    click(1150, 580)
-}
-
-
-// 同样
-function move323() {
-    click(2041, 531)
-    sleep(1000)
-    click(1545, 873)
-    sleep(1000)
-    swipe(1665, 438, 2022, 438, 1500)
-    sleep(200)
-    click(1150, 580)
-}
-
-
 counter = 0;
+
 while (1) {
     // 読む
     click(1920, 259)
     sleep(800)
     // 确认
-    click(1475, 739)
+    click(1485, 884)
     sleep(5000)
     press(1250, 507, 2000)
 
@@ -172,10 +138,7 @@ while (1) {
 
     // 最后是检测结束时候的勲章＆閉じる
     // 勋章确认
-    while (!common.checkMedal()) sleep(3000);
-    click(1249, 640)
-    sleep(800)
-    // 关闭确认
+    while (!common.checkCloseWin()) sleep(3000);
     click(1240, 584)
     sleep(800)
 
