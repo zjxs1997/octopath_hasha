@@ -41,6 +41,23 @@ function click_up() {
     sleep(800)
 }
 
+var host = images.read("/storage/emulated/0/checkPic/host.jpg")
+function checkArenaEnd() {
+    var img = null;
+    while (!img) {
+        img = captureScreen();
+    }
+    var key = findImage(img, host, {
+        region: [910, 220, 100, 100]
+    })
+    img.recycle();
+    if (key)
+        return 1;
+    else
+        return 0;
+}
+
+
 function checker() {
     while (1) {
         if (common.checkArenaCombat()) return 0;
