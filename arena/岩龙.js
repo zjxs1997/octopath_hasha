@@ -59,7 +59,7 @@ while (1) {
     common.move(2, 3, false)
     common.move(4, 3, false)
     common.all_boost()
-    common.move(4, 4, false)
+    common.move(3, 4, false)
     common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
     if (handleDeath()) continue;
@@ -67,9 +67,9 @@ while (1) {
 
     // turn 3
     common.all_boost()
-    common.move(1, 3, true)
+    common.move(1, 4, true)
     common.move(2, 2, false)
-    common.move(3, 3, false)
+    common.move(3, 3, true)
     common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
     if (handleDeath()) continue;
@@ -129,6 +129,7 @@ while (1) {
     common.move(3, 3, false)
     common.all_boost()
     common.move(4, 0, false)
+    common.start_attack(1000)
     while (!common.checkArenaCombat()) sleep(1000);
 
 
