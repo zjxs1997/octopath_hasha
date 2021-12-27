@@ -72,7 +72,8 @@ function checker() {
 
 function win() {
     press(1850, 507, 2000)
-    sleep(8000)
+    while (!common.checkMemoryConfirm())
+        sleep(1000)
     click(1299, 771)
     sleep(1000)
 

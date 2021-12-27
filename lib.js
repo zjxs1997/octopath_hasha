@@ -170,6 +170,23 @@ functions.checkBackDeath = function () {
         return 0;
 }
 
+// 检测追忆之书战胜
+var memory_confirm = images.read("/storage/emulated/0/checkPic/memory_confirm.jpg");
+functions.checkMemoryConfirm = function () {
+    //截图判断
+    var img = null;
+    while (!img) {
+        img = captureScreen();
+    }
+    var key = findImage(img, memory_confirm, {
+        region: [1220, 760, 100, 100]
+    })
+    img.recycle();
+    if (key)
+        return 1;
+    else
+        return 0;
+}
 
 
 
