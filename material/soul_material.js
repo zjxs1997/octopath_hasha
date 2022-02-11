@@ -119,16 +119,21 @@ while (1) {
 
             var res = checker()
             if (res == 1) {
-                log('尼玛，是猫')
-                click(1211, 957)
-                sleep(6000)
-            } else {
+                log('猫')
+                common.all_switch()
+                common.all_boost()
+                click(2020, 929)
+                sleep(1000)
+                res = checker()
+            }
+            // 战斗结束
+            {
                 // 瞎鸡儿点
                 click(1463, 751)
-                sleep(2100)
+                sleep(1800)
                 // 瞎鸡儿点
                 click(1463, 751)
-                sleep(3100)
+                sleep(2800)
                 // 瞎鸡儿点
                 click(1463, 751)
                 sleep(5600)
