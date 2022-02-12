@@ -40,7 +40,7 @@ function relaunch() {
 
 function fight_enemy() {
 
-    common.swipe_left()
+    common.swipe_up()
 
     while (!common.checkCombat()) sleep(1000);
 
