@@ -128,15 +128,12 @@ while (1) {
             }
             // 战斗结束
             {
-                // 瞎鸡儿点
-                click(1463, 751)
-                sleep(1800)
-                // 瞎鸡儿点
-                click(1463, 751)
-                sleep(2800)
-                // 瞎鸡儿点
-                click(1463, 751)
-                sleep(5600)
+                // 闪电五连鞭
+                for (var o = 0; o < 5; ++o) {
+                    click(1463, 751)
+                    sleep(300)
+                }
+                sleep(3000)
             }
 
             log("战斗了" + total_battle_times + '次')
