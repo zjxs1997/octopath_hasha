@@ -462,7 +462,7 @@ functions.cancel_support = function () {
 // 从地图开始，回到当前城镇的旅店门口
 functions.return_to_hotel_door = function () {
     // 大陆地图菜单
-    click(1151, 896)
+    click(1381, 896)
     sleep(1800)
     // 正中间的城市
     click(1228, 515)
@@ -484,7 +484,7 @@ functions.click_little_map = function () {
 
 functions.click_world_map = function () {
     // 大陆地图菜单
-    click(1338, 910)
+    click(1381, 910)
     sleep(1800)
 }
 functions.click_map_shrink = function () {
