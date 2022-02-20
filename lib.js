@@ -193,15 +193,15 @@ functions.checkMemoryConfirm = function () {
 // 检测掉落的soul的种类
 // 目前只有rainbow（也就是战技之魂）比较准确，返回2
 var gold = images.read("/storage/emulated/0/checkPic/gold_soul.jpg")
+var gold2 = images.read("/storage/emulated/0/checkPic/gold_soul_2.jpg")
 var rainbow = images.read("/storage/emulated/0/checkPic/rainbow_soul.jpg")
 functions.checkSoul = function () {
     var img = null;
     while (!img) {
         img = captureScreen();
     }
-    var key = findImage(img, gold, {
-        region: [1630, 390, 50, 50],
-        // threshol: 0.99
+    var key = findImage(img, gold2, {
+        region: [1905, 385, 170, 70],
     })
     if (key) {
         return 1;

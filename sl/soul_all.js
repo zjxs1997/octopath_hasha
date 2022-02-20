@@ -39,7 +39,7 @@ function relaunch() {
     while (!common.checkStanding()) {
         // 随便点什么
         //click(895, 248)
-        click(1241,592)
+        click(1241, 592)
         sleep(1000);
     }
 }
@@ -97,13 +97,13 @@ function fight_enemy1() {
     // turn 1
     common.all_boost()
     common.start_attack(1000)
-    
-   
+
+
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
     common.all_switch()
-     common.move(1, 4, false)
+    common.move(1, 4, false)
     common.move(2, 4, false)
     common.move(3, 4, false)
     common.move(4, 2, false)
@@ -130,15 +130,15 @@ function fight_enemy2() {
 
     // turn 1
     common.all_boost()
-    
+
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
     common.all_switch()
     common.move(1, 4, false)
-    common.move(3,4, false)
-    
+    common.move(3, 4, false)
+
     common.move(4, 4, false)
     common.move(2, 3, false)
     common.all_boost()
@@ -166,7 +166,7 @@ function fight_enemy3() {
     // turn 1
     common.all_boost()
     common.start_attack(1000)
-    
+
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
@@ -177,7 +177,7 @@ function fight_enemy3() {
     common.move(4, 4, false)
     common.all_boost()
     common.start_attack(1000)
-    
+
     while (!common.checkCombatEnd()) sleep(1000);
 
 
@@ -198,15 +198,15 @@ function fight_enemy4() {
 
     // turn 1
     common.all_boost()
-    
+
     common.start_attack(1000)
     while (!common.checkCombat()) sleep(1000);
 
     // turn 2
     common.all_switch()
     common.move(1, 2, false)
-    common.move(3,2, false)
-    
+    common.move(3, 2, false)
+
     common.move(4, 3, false)
     common.move(2, 3, false)
     common.all_boost()
@@ -227,11 +227,12 @@ function fight_enemy4() {
 
 
 // enemy 1
-var counter=0;
+var counter = 0;
 common.click_little_map()
 click(1349, 456)
 sleep(500)
 go_or_run()
+sleep(500)
 switch_team(0)
 while (1) {
     fight_enemy1();
@@ -257,11 +258,12 @@ go_or_run()
 
 
 // enemy 2
-counter=0;
+counter = 0;
 common.click_little_map()
 click(1234, 275)
 sleep(500)
 go_or_run()
+sleep(500)
 switch_team(0)
 while (1) {
     fight_enemy2();
@@ -280,18 +282,19 @@ while (1) {
 sleep(5000)
 switch_team(4)
 common.return_to_hotel_door()
-click(1991,386)
+click(1991, 386)
 sleep(1500)
 while (!common.checkStanding()) {
     sleep(1000);
 }
 
 // enemy 3
-counter=0;
+counter = 0;
 common.click_little_map()
 click(1482, 377)
 sleep(500)
 go_or_run()
+sleep(500)
 switch_team(0)
 while (1) {
     fight_enemy3();
@@ -315,11 +318,12 @@ sleep(500)
 go_or_run()
 
 // enemy 4
-counter=0;
+counter = 0;
 common.click_little_map()
 click(1059, 498)
 sleep(500)
 go_or_run()
+sleep(500)
 switch_team(0)
 while (1) {
     fight_enemy4();
@@ -338,7 +342,7 @@ while (1) {
 sleep(5000)
 switch_team(3)
 common.click_world_map()
-click(788,622)
+click(788, 622)
 sleep(800)
 // 到这里去
 click(1870, 905)
@@ -347,7 +351,4 @@ sleep(1300)
 click(1432, 695)
 // 这个其实可以用while checkStanding，但是暂时就先这样吧
 while (!common.checkStanding()) sleep(1000);
-common.click_little_map()
-click(1118, 175)
-sleep(500)
-go_or_run()
+
