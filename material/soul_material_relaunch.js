@@ -72,11 +72,6 @@ function playerMove(f) {
     sleep(500)
 }
 
-
-var total_battle_times = 0;
-var flag = true;
-var i = 0;
-
 function checker() {
     while (1) {
         if (common.checkCombat()) return 1;
@@ -84,7 +79,39 @@ function checker() {
         sleep(1000)
     }
 }
+
+function task_kill() {
+    // 借助悬浮球
+    click(2359, 465)
+    sleep(800)
+    click(2121, 278)
+    sleep(1200)
+
+    // 退出app
+    swipe(500, 1085, 500, 289, 2000)
+    sleep(800)
+    // 点别的地方
+    click(905, 838)
+    sleep(800)
+}
+
+
+function relaunch() {
+    // 点app
+    click(895, 248)
+    sleep(1000)
+    while (!common.checkStanding()) {
+        // 随便点什么
+        click(895, 248)
+        sleep(1000);
+    }
+}
+
+var total_battle_times = 0;
+var flag = true;
+var i = 0;
 var max_fight_time = 11;
+var sl_time = max_fight_time * 12;
 
 while (1) {
     if (battle_times >= max_fight_time) {
@@ -96,7 +123,13 @@ while (1) {
         town2hole();
         battle_times = 0;
         flag = true;
-        toastLog('xxx')
+
+        if (total_battle_times % sl_time == 0) {
+            log('重启')
+            task_kill();
+            relaunch();
+        }
+
     }
 
     if (common.checkStanding()) {
@@ -146,4 +179,3 @@ while (1) {
         }
     }
 }
-
