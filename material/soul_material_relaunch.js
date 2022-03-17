@@ -110,8 +110,8 @@ function relaunch() {
 var total_battle_times = 0;
 var flag = true;
 var i = 0;
-var max_fight_time = 11;
-var sl_time = max_fight_time * 12;
+var max_fight_time = 13;
+var sl_time = max_fight_time * 5;
 
 while (1) {
     if (battle_times >= max_fight_time) {
