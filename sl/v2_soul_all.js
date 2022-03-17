@@ -101,6 +101,7 @@ var options = ["金", "虹", "both"];
 var i = dialogs.singleChoice("选择素材类型", options);
 judger = [judger0, judger1, judger2][i];
 toastLog("你选择了" + options[i])
+sleep(1000)
 
 
 function fight_enemy1() {
