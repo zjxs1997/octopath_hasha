@@ -97,9 +97,9 @@ function judger2(result) {
     return result > 0;
 }
 
-var options = ["金", "虹", "both"];
+var options = ["both", "虹", "金"];
 var i = dialogs.singleChoice("选择素材类型", options);
-judger = [judger0, judger1, judger2][i];
+judger = [judger2, judger1, judger0][i];
 toastLog("你选择了" + options[i])
 sleep(1000)
 
