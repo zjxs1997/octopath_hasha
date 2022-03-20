@@ -465,6 +465,7 @@ while (1) {
     task_kill();
     relaunch();
 }
+sleep(5000)
 
 common.click_little_map()
 click(1661, 470)
