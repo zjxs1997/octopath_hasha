@@ -26,9 +26,10 @@ var sl_time = max_fight_time * 5;
 
 function hole2town() {
     common.click_world_map()
-    // 现世
-    click(388, 267)
-    sleep(500)
+    // // 现世
+    // click(388, 267)
+    // sleep(500)
+
     click(1235, 649)
     sleep(1400)
     // 到这里去
@@ -36,13 +37,19 @@ function hole2town() {
     sleep(1300)
     // fast travel的确认
     click(1432, 695)
-    sleep(8500)
+    while (!common.checkStanding()) {
+        sleep(1000)
+    }
 
-    // 进入旅店
-    click(1219, 351)
-    sleep(3600)
+    common.click_little_map()
+    click(974, 763)
+    sleep(500)
+    while (!common.checkStanding()) {
+        sleep(1000)
+    }
+
     // 旅店柜台
-    click(1308, 384)
+    click(1366, 407)
     sleep(3000)
     // 瞎鸡儿点
     click(1463, 751)
@@ -57,9 +64,9 @@ function hole2town() {
 
 function town2hole() {
     common.click_world_map()
-    // 边狱
-    click(469, 384)
-    sleep(500)
+    // // 边狱
+    // click(469, 384)
+    // sleep(500)
     click(1252, 404)
     sleep(1200)
     // 到这里去
