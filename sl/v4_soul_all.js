@@ -280,9 +280,10 @@ function fight_enemy8() {
 }
 
 
+var counter = 0;
+
 
 // enemy 4
-var counter = 0;
 common.click_little_map()
 click(1352, 595)
 sleep(500)
