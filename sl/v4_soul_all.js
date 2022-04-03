@@ -243,6 +243,42 @@ function fight_enemy4() {
 
 }
 
+function fight_enemy8() {
+
+    common.swipe_down()
+
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 1
+    common.all_boost()
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 2
+    common.start_attack(1000)
+    while (!common.checkCombat()) sleep(1000);
+
+    // turn 3
+    common.all_switch()
+    common.move(1, 4, false)
+    common.move(2, 2, false)
+    common.move(3, 3, false)
+    common.move(4, 3, false)
+    common.all_boost()
+    common.start_attack(1000)
+
+    while (!common.checkCombatEnd()) sleep(1000);
+
+
+    // 瞎鸡儿点
+    click(1463, 751)
+    sleep(1000)
+    // 点第二下
+    click(1463, 751)
+    sleep(800)
+
+}
+
 
 
 // enemy 4
@@ -375,6 +411,37 @@ while (1) {
     relaunch();
 }
 sleep(5000)
+
+
+// enemy 8
+common.click_little_map()
+click(1523, 197)
+sleep(500)
+go_or_run()
+sleep(500)
+common.click_little_map()
+click(1280, 245)
+sleep(500)
+go_or_run()
+sleep(500)
+switch_team(0)
+while (1) {
+    fight_enemy8(1);
+    counter += 1;
+    var result = common.checkSoul();
+    if (judger(result)) {
+        log('[8] 出了！' + counter + '次！')
+        log(result)
+        // 点第三下
+        click(1463, 751)
+        break;
+    }
+    log('[8] ' + counter + '次，没出～～')
+    task_kill();
+    relaunch();
+}
+sleep(5000)
+
 
 
 // enemy 5
