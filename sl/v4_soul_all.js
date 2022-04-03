@@ -358,7 +358,7 @@ click(1511, 525)
 sleep(500)
 go_or_run()
 sleep(500)
-switch_team(0)
+switch_team(2)
 while (1) {
     fight_enemy3(1);
     counter += 1;
@@ -383,7 +383,7 @@ click(1094, 774)
 sleep(500)
 go_or_run()
 sleep(500)
-switch_team(2)
+switch_team(0)
 while (1) {
     fight_enemy3();
     counter += 1;
