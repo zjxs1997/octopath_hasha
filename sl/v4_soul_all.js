@@ -351,6 +351,32 @@ while (1) {
 }
 sleep(5000)
 
+
+// enemy 7
+common.click_little_map()
+click(1511, 525)
+sleep(500)
+go_or_run()
+sleep(500)
+switch_team(0)
+while (1) {
+    fight_enemy3(1);
+    counter += 1;
+    var result = common.checkSoul();
+    if (judger(result)) {
+        log('[7] 出了！' + counter + '次！')
+        log(result)
+        // 点第三下
+        click(1463, 751)
+        break;
+    }
+    log('[7] ' + counter + '次，没出～～')
+    task_kill();
+    relaunch();
+}
+sleep(5000)
+
+
 // enemy 5
 common.click_little_map()
 click(1094, 774)
@@ -399,29 +425,6 @@ while (1) {
 }
 sleep(5000)
 
-// enemy 7
-common.click_little_map()
-click(1511, 525)
-sleep(500)
-go_or_run()
-sleep(500)
-switch_team(0)
-while (1) {
-    fight_enemy3(1);
-    counter += 1;
-    var result = common.checkSoul();
-    if (judger(result)) {
-        log('[7] 出了！' + counter + '次！')
-        log(result)
-        // 点第三下
-        click(1463, 751)
-        break;
-    }
-    log('[7] ' + counter + '次，没出～～')
-    task_kill();
-    relaunch();
-}
-sleep(5000)
 
 
 
