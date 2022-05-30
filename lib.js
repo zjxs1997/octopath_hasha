@@ -484,7 +484,7 @@ functions.click_little_map = function () {
 
 functions.click_world_map = function () {
     // 大陆地图菜单
-    click(1381, 910)
+    click(1534, 908)
     sleep(1800)
 }
 functions.click_map_shrink = function () {
